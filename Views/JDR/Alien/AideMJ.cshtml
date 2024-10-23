@@ -1,0 +1,637 @@
+﻿<script>window.parent.document.title = 'Aide MJ';</script>
+
+
+@{ 
+#region /\ fjhgsdjgfjsdgfjgsdjfsf /\
+}
+<!--<script>
+    function ShowNewAideMJ() {
+        $("#NewAideMJ").css("display", "block");
+    }
+
+    function HideNewAideMJ() {
+        var div = document.getElementById("inputTitre");
+        div.value = "";
+
+        div = document.getElementById("inputContenu");
+        div.value = "";
+
+        $("#NewAideMJ").css("display", "none");
+    }
+
+    function SaveAideMJ() {
+        var titre = document.getElementById("inputTitre");
+        var contenu = document.getElementById("inputContenu");
+        var id = document.getElementById("inputIdAideMJ");
+        var data = {};
+        try {
+            data.Id = id.value;
+        }
+        catch {
+            data.Id = 0
+        }
+
+        data.titre = titre.value;
+        data.contenu = contenu.value;
+        $.ajax({
+            type: 'POST',
+            url: '/Alien/EnregistrerAideMJ',
+            data: data,
+            async: true,
+            success:
+                function () {
+                    HideNewAideMJ();
+                },
+            error:
+                function (result) {
+                    alert(result);
+                }
+        })
+    }
+
+    function EditAideMJ(Id) {
+        $("#inputIdAideMJ").value = Id;
+
+        var data = {};
+        data.Id = Id;
+
+        $.ajax({
+            type: 'POST',
+            url: '/Alien/GetTitreContenuAIdeMJ',
+            data: data,
+            async: true,
+            success:
+                function (result) {
+                    var split = result.split("**");
+
+                    var titre = document.getElementById("inputTitre");
+                    titre.value = split[0];
+
+                    var contenu = document.getElementById("inputContenu");
+                    contenu.value = split[1];
+
+                    var id = document.getElementById("inputIdAideMJ");
+                    id.value = Id;
+
+                    ShowNewAideMJ();
+                },
+            error:
+                function (result) {
+                    alert(result);
+                }
+        })
+    }
+
+    function DeleteAideMJ(Id) {
+        if (confirm("Êtes-vous sur de supprimer cette aide ?") == true) {
+            var data = {};
+            data.Id = Id;
+
+            $.ajax({
+                type: 'POST',
+                url: '/ALien/DeleteAideMJ',
+                data: data,
+                async: true,
+                success:
+                    function (result) {
+                        if (result != "") {
+                            alert(result);
+                        }
+                    },
+                error:
+                    function (result) {
+                        alert(result);
+                    }
+            })
+        }
+    }
+</script>-->
+
+@*<button class="bouton" onclick="ShowNewAideMJ()">Ajouter une Aide</button>
+
+<div id="NewAideMJ">
+    <input type="number" id="inputIdAideMJ" style="display:none;" value="0" />
+    <h2 style="text-align:center;">Ajouter une Nouvelle AideMJ</h2>
+    <div class="row">
+        <label style="width: 100px; margin-left: 15px;">Titre :</label>
+        <input type="text" id="inputTitre" />
+    </div><br />
+    <div class="row">
+        <label style="width: 100px; margin-left: 15px;">Contenu :</label>
+        <textarea id="inputContenu"></textarea>
+    </div>
+
+    <div class="row">
+        <button class="bouton_refus" onclick="HideNewAideMJ()">
+            Annuler
+        </button>
+        <button class="bouton_valide" onclick="SaveAideMJ()">
+            Enregistrer
+        </button>
+    </div>
+</div>
+
+<div class="containerAideMJ row">
+    @foreach (MJ.Models.Aide_MJ_Alien aidemj in Model)
+    {
+        <div class="AideMJ">
+            <div style="width:100%">
+                <button id="bouton_edit" onclick="EditAideMJ(@aidemj.Id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                        <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                    </svg>
+                </button>
+                <button id="bouton_supp" onclick="DeleteAideMJ(@aidemj.Id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                    </svg>
+                </button>
+            </div>
+            <label style="text-align:center;width:100%;">@aidemj.Titre.Trim()</label>
+            <label style="max-width:100%;">@aidemj.Contenu.Trim()</label>
+        </div>
+    }
+</div>*@
+
+
+<!--<style>
+
+    .AideMJ {
+        min-height: 80px;
+        width: 350px;
+        border: 2px solid white;
+        border-radius: 10px;
+        margin:10px 20px 10px 20px;
+    }
+
+    .containerAideMJ {
+        width:100%;
+    }
+
+    #bouton_edit {
+        background: none;
+        color: white;
+        border: none;
+    }
+
+        #bouton_edit:hover {
+            color: gray;
+        }
+
+    #bouton_supp {
+        background: none;
+        color: white;
+        border: none;
+        margin-left: 300px;
+        position: absolute;
+        display: block;
+        margin-top: -25px;
+    }
+
+        #bouton_supp:hover {
+            color: darkred;
+        }
+
+    .bouton_valide {
+        color: green;
+        background-color: black;
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 130px;
+        height: 40px;
+        margin-left: auto;
+        margin-right: 50px;
+        margin-bottom: 20px;
+    }
+
+        .bouton_valide:hover {
+            background-color: green;
+            color: black;
+        }
+
+    .bouton_refus {
+        color: darkred;
+        background-color: black;
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 130px;
+        height: 40px;
+        margin-left: 50px;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+
+        .bouton_refus:hover {
+            background-color: darkred;
+            color: black;
+        }
+
+    #NewAideMJ {
+        width: 600px;
+        border: 2px solid white;
+        border-radius: 10px;
+        margin-left: 40%;
+        position: relative;
+        display: none;
+        background-color: black;
+        z-index: 3;
+        position: absolute;
+    }
+
+    #inputTitre {
+        width: 450px;
+        background: none;
+        border: none;
+        color: white;
+    }
+
+        #inputTitre:focus {
+            outline: none;
+        }
+
+    #inputContenu {
+        width: 450px;
+        margin-bottom: 15px;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        border: none;
+        background-color: black;
+        border-radius: 4px;
+        font-size: 16px;
+        resize: none;
+        color: white;
+        height: 200px;
+    }
+
+        #inputContenu:focus {
+            outline: none;
+        }
+</style>-->
+
+
+
+
+
+
+
+
+
+
+@{ 
+#endregion
+}
+
+
+
+
+<div style="text-align:center;">
+    <h2>ENCOMBREMENT</h2>
+    <label>jusqu'à FORCE x4</label><br />
+    <label>si courir ou ramper test mobilité</label><br />
+    <label>si  echec lacher objet ou immobile</label><br /><br />
+    <br />
+
+    <h2>COMBAT</h2>
+    <p>
+        Au début du combat tirer l'initiative avec les cartes<br />
+        Les joueurs peuvent échanger leurs initiatives a chauque début de tour<br />
+        Chaque joueur possède une action lente et une action rapide par Round<br />
+        Une action rapide vaut deux actions rapides
+    </p><br />
+
+    <h3>ACTIONS LENTES</h3>
+    <table class="align-mid" style="width:550px">
+        <thead>
+            <tr>
+                <td>
+                    ACTION
+                </td>
+                <td>
+                    PREREQUIS
+                </td>
+                <td>
+                    COMPETENCE
+                </td>
+            </tr>
+        </thead>
+        <tr>
+            <td>Attaque en combat rapproché</td>
+            <td> / </td>
+            <td>Combat rapproché</td>
+        </tr>
+        <tr>
+            <td>Arrêter la panique</td>
+            <td>Être paniqué</td>
+            <td>Commandement</td>
+        </tr>
+        <tr>
+            <td>Démarrer un moteur</td>
+            <td>Véhicule</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Donner des ordres</td>
+            <td>Personnages propres</td>
+            <td>Commandement</td>
+        </tr>
+        <tr>
+            <td>Mettre une combinaison satiale</td>
+            <td>Combinaison spatiale</td>
+            <td>Mobilité</td>
+        </tr>
+        <tr>
+            <td>Lancer une arme</td>
+            <td>Arme de jet</td>
+            <td>Combat à distance</td>
+        </tr>
+        <tr>
+            <td>Persuader</td>
+            <td>Une personne proche</td>
+            <td>Manipulation</td>
+        </tr>
+        <tr>
+            <td>Premier secours</td>
+            <td>Vicime brisée ou mourante</td>
+            <td>Soins médicaux</td>
+        </tr>
+        <tr>
+            <td>Rafale ou tire automatique</td>
+            <td>Arme à feu</td>
+            <td>Combat distance</td>
+        </tr>
+        <tr>
+            <td>Ramper</td>
+            <td>être a terre</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Recherger</td>
+            <td>Arme à feu</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Tirer avec une arme à feu</td>
+            <td>Arme à feu</td>
+            <td>Combat distance</td>
+        </tr>
+        <tr>
+            <td>utiliser un objet fétiche</td>
+            <td>Objet fétiche</td>
+            <td> / </td>
+        </tr>
+    </table>
+    <br />
+
+    <h3>ACTIONS RAPIDES</h3>
+    <table class="align-mid" style="width:630px;">
+        <thead>
+            <tr>
+                <td>
+                    ACTION
+                </td>
+                <td>
+                    PREREQUIS
+                </td>
+                <td>
+                    COMPETENCE
+                </td>
+            </tr>
+        </thead>
+        <tr>
+            <td>Attaque de saisie</td>
+            <td>Avoir saisie un ennemie</td>
+            <td>Combat rapproché</td>
+        </tr>
+        <tr>
+            <td>Bloquer une attaque</td>
+            <td>Être attaquer en combat rapproché</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Chercher un abri</td>
+            <td>Abri dans la même zone</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Conduire</td>
+            <td>Véhicule</td>
+            <td>Pilotage</td>
+        </tr>
+        <tr>
+            <td>Courir</td>
+            <td>Pas d'ennemie au contact</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Dégainer une arme</td>
+            <td> / </td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Entrer / Sortir d'un véhicule</td>
+            <td>Véhicule</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Passer en posture de surveillance</td>
+            <td>Arme à distance</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Pousser</td>
+            <td>Ennemie au contact</td>
+            <td>Combat rapproché</td>
+        </tr>
+        <tr>
+            <td>Prendre le volant</td>
+            <td>Véhicule</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Rammaser un objet</td>
+            <td> / </td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Retraite</td>
+            <td>Ennemi au contact</td>
+            <td>Mobilité</td>
+        </tr>
+        <tr>
+            <td>Se relever</td>
+            <td>Être à terre</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Traverser une porte / sas</td>
+            <td> / </td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Utiliser un objet</td>
+            <td>Variable</td>
+            <td>Variable</td>
+        </tr>
+        <tr>
+            <td>Viser</td>
+            <td>Arme à distance</td>
+            <td> / </td>
+        </tr>
+    </table>
+    <br />
+
+    <h3>ATTAUE FURTIVE</h3>
+    <label>Test mobilité contre observation</label><br />
+    <label>Si réussite pour l'attaquant attaque gratuite sinon vue par l'ennemi</label><br /><br />
+
+    <h3>EMBUSCADE</h3>
+    <label>Test mobilité contre observation</label><br />
+    <label>Test mobilité par le pire du groupe contre le meilleur en observation</label><br /><br />
+
+    <h3>COPRS A COPRS</h3>
+    <label>Toutes réussites obtenu après la première choisi entre</label>
+    <ul>
+        <li>+1 dégat</li>
+        <li>Echange d'initiative</li>
+        <li>Ennemi tombe à terre</li>
+        <li>Ennemi saisi</li>
+    </ul><br />
+
+    <h3>BLOQUAGE</h3>
+    <label>1 action rapide en test combat rapproché</label><br />
+    <label>Ennoncer le bloquage avant de lancer les dés</label><br />
+    <label>Pour chaque réussite choisir entre :</label>
+    <ul>
+        <li>Enlever une réussite a l'adversaire</li>
+        <li>Contre-attaquer</li>
+    </ul>
+    <br />
+
+    <h3>RETRAITE</h3>
+    <label>Test mobilité si échec énnemi attaque gratuite</label>
+    <br /><br />
+
+    <h3>POUSSER</h3>
+    <label>Test combat rapproché</label>
+    <br /><br />
+
+    <h3>COMBAT A DISTANCE</h3>
+    <label>Si un dé de stress donne un chargeur vide après le tire</label><br />
+    <label>Viser: Bonus 2</label><br />
+    <label>MODIFICATEURS</label>
+    <table class="align-mid" style="width:260px;">
+        <tr>
+            <td>Contact</td>
+            <td>Bonus 2 / Malus 3</td>
+        </tr>
+        <tr>
+            <td>Courte portée</td>
+            <td> / </td>
+        </tr>
+        <tr>
+            <td>Moyenne portée</td>
+            <td>Malus 1</td>
+        </tr>
+        <tr>
+            <td>Longue portée</td>
+            <td>Malus 2</td>
+        </tr>
+        <tr>
+            <td>Extrême portée</td>
+            <td>Malus 3</td>
+        </tr>
+        <tr>
+            <td>Grande cible</td>
+            <td>Bonus 2</td>
+        </tr>
+        <tr>
+            <td>Petite cible</td>
+            <td>Malus 2</td>
+        </tr>
+        <tr>
+            <td>Pénombre</td>
+            <td>Malus 1</td>
+        </tr>
+        <tr>
+            <td>Obscurité</td>
+            <td>Malus 2</td>
+        </tr>
+    </table>
+
+    <br />
+    <label>Pour chaque réussite en plus de la première choisir entre:</label>
+    <ul>
+        <li>+1 dégat</li>
+        <li>Ennemi fixé</li>
+    </ul>
+    <br />
+
+    <h3>MODE AUTO</h3>
+    <label>Bonus 2 et ajouter 1 au stress</label><br />
+    <label>La première réussite sur un deuxième énnemi tous les dégats de l'arme</label><br />
+    <label>Les autres réussites actions déclats</label><br /><br />
+
+    <h3>COUVERTURE</h3>
+    <table class="align-mid" style="width:250px;">
+        <tr>
+            <td>Massif de plante</td>
+            <td>P2</td>
+        </tr>
+        <tr>
+            <td>Meuble</td>
+            <td>P3</td>
+        </tr>
+        <tr>
+            <td>Porte</td>
+            <td>P4</td>
+        </tr>
+        <tr>
+            <td>Cloison intérieur vaisseau</td>
+            <td>P5</td>
+        </tr>
+        <tr>
+            <td>Cloison extérieur vaisseau</td>
+            <td>P6</td>
+        </tr>
+        <tr>
+            <td>Cloison blindée</td>
+            <td>P7+</td>
+        </tr>
+    </table>
+    <br />
+
+    <h2>BRISE</h2>
+    <label>Santé à 0</label><br />
+    <label>Jet de bléssure critique</label><br />
+    <label>table p66</label><br /><br />
+
+    <h3>SE REMETTRE</h3>
+    <label>Test Soins Médicaux action lente</label><br />
+    <label>Points de santé gagné = nombre réussite</label><br />
+    <label>Sinon 1 santé au bout d'un tour</label><br /><br />
+
+    <h3>MORT</h3>
+    <label>Test endu san forcer ni le stress (test répas)</label><br /><br />
+
+    <h2>PANIQUE</h2>
+    <label>Si tous les dés de stress donnent 1 echec du test</label><br />
+    <label>Lancer un dé 6 + niveau de stress</label><br />
+    <label>table p71</label><br />
+    <label>sinon enlever 2 réussites a chaque 1</label><br /><br />
+
+    <h2>FEU</h2>
+    <label>Lancer un dé pour chaque point d'intensité</label><br />
+    <label>Si on est touché on prend feu et on prend une attaque de feu a chaque tour</label><br />
+    <label>Si brisé par le feu test trépas chaque round</label><br /><br />
+
+    <h2>EXPLOSION</h2>
+    <label>Lancer un dé pour chaque point de puissance</label>
+</div>
+
+
+
+<style>
+    li{
+        list-style-type: none;
+    }
+</style>

@@ -1,0 +1,26 @@
+﻿@using MJ.Models
+@{ 
+    List<PersonnageAlien> listperso = Model;
+}
+
+<button class="bouton" onclick="location.href='@Url.Action("CreatePersonnage", "Alien")'">
+    Créer un Nouveau Personnage
+</button>
+
+<div class="row" style="width:100%;">
+
+    @foreach (PersonnageAlien perso in listperso)
+    {
+        <div onclick="window.open('PersonnageDetail?pId=' + @perso.Id)" class="bouton col-1 DivPersonnage">
+            <label style="width:100%;text-align:center;cursor:pointer;">@perso.Nom.Trim()</label><br />
+            <label style="width:100%;text-align:center;cursor:pointer;">@perso.Carriere.Trim()</label>
+        </div>
+    }
+</div>
+
+<style>
+    .DivPersonnage{
+        cursor: pointer;
+        margin: 20px 15px 20px 15px;
+    }
+</style>

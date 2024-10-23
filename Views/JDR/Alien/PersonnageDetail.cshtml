@@ -1,0 +1,505 @@
+﻿@using MJ.Models;
+@{
+    PersonnageAlien personnage = Model;
+}
+
+<script>
+    var LogoMain = document.getElementById("LogoMain");
+    LogoMain.style.display = "none";
+
+    function SavePersonnage() {
+        var data = {};
+
+        data.Id = $("#input-ID").val();
+        data.Nom = $("#input-NOM").val();
+        data.Carriere = $("#input-CARRIERE").val();
+        data.Apparence = $("#input-APPARENCE").val();
+        data.Objectif_Personnel = $("#input-OBJECTIF-PERSONNEL").val();
+        data.Camarade = $("#input-CAMARADE").val();
+        data.Rival = $("#input-RIVAL").val();
+        data.Talent1 = $("#input-TALENT1").val();
+        data.Talent2 = $("#input-TALENT2").val();
+        data.Talent3 = $("#input-TALENT3").val();
+        data.Talent4 = $("#input-TALENT4").val();
+        data.Objet_Minuscule = $("#input-OBJET-MINUSCULE").val();
+        data.Objet_Fetiche = $("#input-OBJET-FETICHE").val();
+        data.Equipement1 = $("#input-EQUIPEMENT1").val();
+        data.Equipement2 = $("#input-EQUIPEMENT2").val();
+        data.Equipement3 = $("#input-EQUIPEMENT3").val();
+        data.Equipement4 = $("#input-EQUIPEMENT4").val();
+        data.Equipement5 = $("#input-EQUIPEMENT5").val();
+        data.Equipement6 = $("#input-EQUIPEMENT6").val();
+        data.Equipement7 = $("#input-EQUIPEMENT7").val();
+        data.Equipement8 = $("#input-EQUIPEMENT8").val();
+        data.Equipement9 = $("#input-EQUIPEMENT9").val();
+        data.Equipement10 = $("#input-EQUIPEMENT10").val();
+        data.Blessure_Critique = $("#input-BLESSURE-CRITIQUE").val();
+        data.Protection = $("#input-PROTECTION").val();
+        data.Arme1 = $("#input-ARMES1").val();
+        data.Arme2 = $("#input-ARMES2").val();
+        data.Arme3 = $("#input-ARMES3").val();
+        data.Arme4 = $("#input-ARMES4").val();
+        data.Force = $("#input-FORCE").val();
+        data.Endurence = $("#input-ENDURENCE").val();
+        data.Combat_Rapproche = $("#input-COMBAT-RAPPROCHE").val();
+        data.Machine_Lourde = $("#input-MACHINES-LOURDES").val();
+        data.Esprit = $("#input-ESPRIT").val();
+        data.Observation = $("#input-OBSERVATION").val();
+        data.Survie = $("#input-SURVIE").val();
+        data.Comtech = $("#input-COMTECH").val();
+        data.Empathie = $("#input-EMPATHIE").val();
+        data.Soins_Medicaux = $("#input-SOINS-MEDICAUX").val();
+        data.Manipulation = $("#input-MANIPULATION").val();
+        data.Commandement = $("#input-COMMANDEMENT").val();
+        data.Agilite = $("#input-AGILITE").val();
+        data.Pilotage = $("#input-PILOTAGE").val();
+        data.Mobilite = $("#input-MOBILITE").val();
+        data.Combat_a_Distance = $("#input-COMBAT-A-DISTANCE").val();
+        data.Niveau_Protection = $("#input-NIVEAU-PROTECTION").val();
+        data.Encombrement = $("#input-ENCOMBREMENT").val();
+        data.Air = $("#input-AIR").val();
+        data.Nourriture = $("#input-NOURRITURE").val();
+        data.Energie = $("#input-ENERGIE").val();
+        data.Eau = $("#input-EAU").val();
+        data.Bonus1 = $("#input-BONUS1").val();
+        data.Bonus2 = $("#input-BONUS2").val();
+        data.Bonus3 = $("#input-BONUS3").val();
+        data.Bonus4 = $("#input-BONUS4").val();
+        data.Degat1 = $("#input-DEGAT1").val();
+        data.Degat2 = $("#input-DEGAT2").val();
+        data.Degat3 = $("#input-DEGAT3").val();
+        data.Degat4 = $("#input-DEGAT4").val();
+        data.PORTEE1 = $("#input-PORTEE1").val();
+        data.PORTEE2 = $("#input-PORTEE2").val();
+        data.PORTEE3 = $("#input-PORTEE3").val();
+        data.PORTEE4 = $("#input-PORTEE4").val();
+        data.Stress = Stress();
+        data.Sante = Sante();
+        data.Radiation = Radiation();
+        data.Experience = Experience();
+        data.Affame = Affame();
+        data.Deshydrate = Deshydrate();
+        data.Epuise = Epuise();
+        data.Gele = Gele();
+        data.Recit = Recit();
+
+        console.log(data);
+
+        $.ajax({
+            type: 'POST',
+            url: '/Alien/SavePersonnage',
+            data: data,
+            async: true,
+            sucess:
+                function (result) {
+                    if (result != "") {
+                        alert(result);
+                    }
+                },
+            error:
+                function (result) {
+                    alert(result);
+                }
+        })
+    }
+
+    function Stress() {
+        if ($("#input-STRESS1").children()[0].checked == true) return 1;
+        else if ($("#input-STRESS2").children()[0].checked == true) return 2;
+        else if ($("#input-STRESS3").children()[0].checked == true) return 3;
+        else if ($("#input-STRESS4").children()[0].checked == true) return 4;
+        else if ($("#input-STRESS5").children()[0].checked == true) return 5;
+        else if ($("#input-STRESS6").children()[0].checked == true) return 6;
+        else if ($("#input-STRESS7").children()[0].checked == true) return 7;
+        else if ($("#input-STRESS8").children()[0].checked == true) return 8;
+        else if ($("#input-STRESS9").children()[0].checked == true) return 9;
+        else if ($("#input-STRESS10").children()[0].checked == true) return 10;
+        else return 0;
+    }
+    function Radiation() {
+        if ($("#input-RADIATION1").children()[0].checked == true) return 1;
+        else if ($("#input-RADIATION2").children()[0].checked == true) return 2;
+        else if ($("#input-RADIATION3").children()[0].checked == true) return 3;
+        else if ($("#input-RADIATION4").children()[0].checked == true) return 4;
+        else if ($("#input-RADIATION5").children()[0].checked == true) return 5;
+        else if ($("#input-RADIATION6").children()[0].checked == true) return 6;
+        else if ($("#input-RADIATION7").children()[0].checked == true) return 7;
+        else if ($("#input-RADIATION8").children()[0].checked == true) return 8;
+        else if ($("#input-RADIATION9").children()[0].checked == true) return 9;
+        else if ($("#input-RADIATION10").children()[0].checked == true) return 10;
+        else return 0;
+    }
+    function Sante() {
+        if ($("#input-SANTE1").children()[0].checked == true) return 1;
+        else if ($("#input-SANTE2").children()[0].checked == true) return 2;
+        else if ($("#input-SANTE3").children()[0].checked == true) return 3;
+        else if ($("#input-SANTE4").children()[0].checked == true) return 4;
+        else if ($("#input-SANTE5").children()[0].checked == true) return 5;
+        else if ($("#input-SANTE6").children()[0].checked == true) return 6;
+        else if ($("#input-SANTE7").children()[0].checked == true) return 7;
+        else if ($("#input-SANTE8").children()[0].checked == true) return 8;
+        else if ($("#input-SANTE9").children()[0].checked == true) return 9;
+        else if ($("#input-SANTE10").children()[0].checked == true) return 10;
+        else return 0;
+    }
+    function Experience() {
+        if ($("#input-EXPERIENCE1").children()[0].checked == true) return 1;
+        else if ($("#input-EXPERIENCE2").children()[0].checked == true) return 2;
+        else if ($("#input-EXPERIENCE3").children()[0].checked == true) return 3;
+        else if ($("#input-EXPERIENCE4").children()[0].checked == true) return 4;
+        else if ($("#input-EXPERIENCE5").children()[0].checked == true) return 5;
+        else if ($("#input-EXPERIENCE6").children()[0].checked == true) return 6;
+        else if ($("#input-EXPERIENCE7").children()[0].checked == true) return 7;
+        else if ($("#input-EXPERIENCE8").children()[0].checked == true) return 8;
+        else if ($("#input-EXPERIENCE9").children()[0].checked == true) return 9;
+        else if ($("#input-EXPERIENCE10").children()[0].checked == true) return 10;
+        else return 0;
+    }
+    function Recit() {
+        if ($("#input-RECIT1").children()[0].checked == true) return 1;
+        if ($("#input-RECIT2").children()[0].checked == true) return 1;
+        if ($("#input-RECIT1").children()[0].checked == true) return 1;
+        return 0;
+    }
+    function Affame() {
+        if ($("#input-AFFAME").children()[0].checked == true) return 1;
+        return 0;
+    }
+    function Deshydrate() {
+        if ($("#input-DESHYDRATE").children()[0].checked == true) return 1;
+        return 0;
+    }
+    function Epuise() {
+        if ($("#input-EPUISE").children()[0].checked == true) return 1;
+        return 0;
+    }
+    function Gele() {
+        if ($("#input-GELE").children()[0].checked == true) return 1;
+        return 0;
+    }
+</script>
+
+<script>window.parent.document.title = '@personnage.Nom';</script>
+
+<button class="bouton" id="bouton-retour" onclick="window.close()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5" />
+    </svg>
+</button>
+
+<style>
+    #bouyton_retour {
+        position: absolute;
+        z-index: 5;
+        width: 60px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    #bouton_valid {
+        margin-left: 72%;
+        position: absolute;
+        z-index: 5;
+        background-color: black;
+        color: green;
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 120px;
+        height: 40px;
+        margin-top: 49.5%;
+    }
+        #bouton_valid:hover{
+            background-color:green;
+            color:white;
+        }
+        
+     #bouton_annul {
+        margin-left: 65%;
+        position: absolute;
+        z-index: 5;
+        background-color: black;
+        color: darkred;
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 120px;
+        height: 40px;
+        margin-top: 49.5%;
+    }
+        #bouton_annul:hover {
+            background-color: darkred;
+            color: white;
+        }
+</style>
+
+<button id="bouton_annul" onclick="window.close()">
+    Annuler
+</button>
+
+<button id="bouton_valid" onclick="SavePersonnage()">
+    Enregistrer
+</button>
+<input type="number" id="input-ID" value="@personnage.Id" style="display:none;" />
+<input type="text" id="input-NOM" value="@personnage.Nom.Trim()" />
+<input type="text" id="input-CARRIERE" value="@personnage.Carriere.Trim()" />
+<textarea id="input-APPARENCE">@personnage.Apparence.Trim()</textarea>
+<textarea id="input-OBJECTIF-PERSONNEL">@personnage.Objectif_Personnel.Trim()</textarea>
+<input type="text" id="input-CAMARADE" value="@personnage.Camarade.Trim()" />
+<input type="text" id="input-RIVAL" value="@personnage.Rival.Trim()" />
+<textarea id="input-TALENT1">@personnage.Talent1.Trim()</textarea>
+<textarea id="input-TALENT2">@personnage.Talent2.Trim()</textarea>
+<textarea id="input-TALENT3">@personnage.Talent3.Trim()</textarea>
+<textarea id="input-TALENT4">@personnage.Talent4.Trim()</textarea>
+<textarea id="input-OBJET-MINUSCULE">@personnage.Objet_Minuscule.Trim()</textarea>
+<input type="text" id="input-OBJET-FETICHE" value="@personnage.Objet_Fetiche.Trim()" />
+<input type="text" id="input-EQUIPEMENT1" value="@personnage.Equipement1.Trim()" />
+<input type="text" id="input-EQUIPEMENT2" value="@personnage.Equipement2.Trim()" />
+<input type="text" id="input-EQUIPEMENT3" value="@personnage.Equipement3.Trim()" />
+<input type="text" id="input-EQUIPEMENT4" value="@personnage.Equipement4.Trim()" />
+<input type="text" id="input-EQUIPEMENT5" value="@personnage.Equipement5.Trim()" />
+<input type="text" id="input-EQUIPEMENT6" value="@personnage.Equipement6.Trim()" />
+<input type="text" id="input-EQUIPEMENT7" value="@personnage.Equipement7.Trim()" />
+<input type="text" id="input-EQUIPEMENT8" value="@personnage.Equipement8.Trim()" />
+<input type="text" id="input-EQUIPEMENT9" value="@personnage.Equipement9.Trim()" />
+<input type="text" id="input-EQUIPEMENT10" value="@personnage.Equipement10.Trim()" />
+<textarea id="input-BLESSURE-CRITIQUE">@personnage.Blessure_Critique.Trim()</textarea>
+<input type="text" id="input-PROTECTION" value="@personnage.Protection.Trim()" />
+<input type="text" id="input-ARMES1" value="@personnage.Arme1.Trim()" />
+<input type="text" id="input-ARMES2" value="@personnage.Arme2.Trim()" />
+<input type="text" id="input-ARMES3" value="@personnage.Arme3.Trim()" />
+<input type="text" id="input-ARMES4" value="@personnage.Arme4.Trim()" />
+<input type="number" id="input-FORCE" value="@personnage.Force" />
+<input type="number" id="input-ENDURENCE" value="@personnage.Endurence" />
+<input type="number" id="input-COMBAT-RAPPROCHE" value="@personnage.Combat_Rapproche" />
+<input type="number" id="input-MACHINES-LOURDES" value="@personnage.Machine_Lourde" />
+<input type="number" id="input-ESPRIT" value="@personnage.Esprit" />
+<input type="number" id="input-OBSERVATION" value="@personnage.Observation" />
+<input type="number" id="input-SURVIE" value="@personnage.Survie" />
+<input type="number" id="input-COMTECH" value="@personnage.Comtech" />
+<input type="number" id="input-EMPATHIE" value="@personnage.Empathie" />
+<input type="number" id="input-SOINS-MEDICAUX" value="@personnage.Soins_Medicaux" />
+<input type="number" id="input-MANIPULATION" value="@personnage.Manipulation" />
+<input type="number" id="input-COMMANDEMENT" value="@personnage.Commandement" />
+<input type="number" id="input-AGILITE" value="@personnage.Agilite" />
+<input type="number" id="input-PILOTAGE" value="@personnage.Pilotage" />
+<input type="number" id="input-MOBILITE" value="@personnage.Mobilite" />
+<input type="number" id="input-COMBAT-A-DISTANCE" value="@personnage.Combat_a_Distance" />
+<input type="number" id="input-NIVEAU-PROTECTION" value="@personnage.Niveau_Protection" />
+<input type="number" id="input-ENCOMBREMENT" value="@personnage.Encombrement" />
+<input type="number" id="input-AIR" value="@personnage.Air" />
+<input type="number" id="input-NOURRITURE" value="@personnage.Nourriture" />
+<input type="number" id="input-ENERGIE" value="@personnage.Energie" />
+<input type="number" id="input-EAU" value="@personnage.Eau" />
+<input type="number" id="input-BONUS1" value="@personnage.Bonus1" />
+<input type="number" id="input-DEGAT1" value="@personnage.Degat1" />
+<input type="text" id="input-PORTEE1" value="@personnage.Portee1" />
+<input type="number" id="input-BONUS2" value="@personnage.Bonus2" />
+<input type="number" id="input-DEGAT2" value="@personnage.Degat2" />
+<input type="text" id="input-PORTEE2" value="@personnage.Portee2" />
+<input type="number" id="input-BONUS3" value="@personnage.Bonus3" />
+<input type="number" id="input-DEGAT3" value="@personnage.Degat3" />
+<input type="text" id="input-PORTEE3" value="@personnage.Portee3" />
+<input type="number" id="input-BONUS4" value="@personnage.Bonus4" />
+<input type="number" id="input-DEGAT4" value="@personnage.Degat4" />
+<input type="text" id="input-PORTEE4" value="@personnage.Portee4" />
+
+@*STRESS*@
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS1">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress >= 1) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS2">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress >= 2) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS3">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress >= 3) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS4">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress >= 4) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS5">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress >= 5) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS6">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress >= 6) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS7">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress >= 7) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS8">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress >= 8) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS9">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress >= 9) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-STRESS10">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Stress == 10) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+
+@*SANTE*@
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE1">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante >= 1) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE2">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante >= 2) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE3">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante >= 3) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE4">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante >= 4) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE5">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante >= 5) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE6">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante >= 6) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE7">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante >= 7) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE8">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante >= 8) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE9">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante >= 9) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-SANTE10">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Sante == 10) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+
+@*RADIATION*@
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION1">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation >= 1) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION2">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation >= 2) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION3">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation >= 3) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION4">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation >= 4) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION5">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation >= 5) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION6">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation >= 6) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION7">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation >= 7) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION8">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation >= 8) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION9">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation >= 9) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RADIATION10">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Radiation == 10) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+
+@*ETATS*@
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-AFFAME">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Affame == 1) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-DESHYDRATE">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Deshydrate == 1) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EPUISE">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Epuise == 1) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-GELE">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Gele == 1) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+
+@*EXPERIENCE*@
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE1">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience >= 1) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE2">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience >= 2) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE3">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience >= 3) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE4">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience >= 4) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE5">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience >= 5) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE6">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience >= 6) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE7">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience >= 7) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE8">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience >= 8) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE9">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience >= 9) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-EXPERIENCE10">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Experience == 10) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+
+@*RECIT*@
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RECIT1">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Recit >= 1) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RECIT2">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Recit >= 2) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+<label class="checkbox-button" style="width:20px;height:20px;" id="input-RECIT3">
+    <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" @{ if (personnage.Recit == 3) { <text> checked </text>  } }>
+    <span class="checkbox-button__control"></span>
+</label>
+
+<img src="~/Images/Alien/AL-Fiche-de-personnage_page-0001.jpg" width="100%" height="100%" style="z-index:1;position:fixed;margin-bottom:500px;" />

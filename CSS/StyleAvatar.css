@@ -1,0 +1,26 @@
+﻿.input-text-avatar {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: black;
+    border-radius: .2em .2em 0 0;
+    padding: .4em;
+    color: white;
+    text-align: center;
+    height: 50px;
+    width: 300px;
+    font-size: 30px;
+}
+
+.input-radio-maitrise{
+    transform: rotate(45deg);
+}
+
+.input-radio-maitrise:focus{
+    outline-color: transparent;
+}
+
+.input-radio-maitrise:checked{
+    background-color:white;
+    background-size:100% 100%;
+}

@@ -1,0 +1,54 @@
+﻿/*classe alignemeent*/
+.align-mid {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.align-gau {
+    margin-left: 0px;
+    margin-right: auto;
+    display: block;
+}
+
+.align-droi {
+    margin-left: auto;
+    margin-right: 0px;
+    display: block;
+}
+
+
+/*style pour logo de jdr sur page accueil*/
+.logo-main-jdr{
+    border-radius:15px;
+    margin-left:200px;
+    cursor:pointer;
+    margin-top:50px;
+}
+
+/*style pour logo principale*/
+.main-logo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.body-main{
+    background-color: black;
+    color: white;
+}
+
+.bouton{
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color:black;
+    color:white;
+    padding:5px;
+}
+
+    .bouton:hover{
+        background-color:dimgray;
+    }

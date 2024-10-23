@@ -1,0 +1,238 @@
+﻿@using MJ.Models
+@{ 
+    PersonnageAvatar personnage = Model;
+}
+
+<script>
+    function grayfilter(maitrise) {
+
+        const eau = document.getElementById("img-eau");
+        const terre = document.getElementById("img-terre");
+        const feu = document.getElementById("img-feu");
+        const air = document.getElementById("img-air");
+        const arme = document.getElementById("img-arme");
+        const tech = document.getElementById("img-tech");
+
+        switch (maitrise) {
+            case maitrise = "eau":
+                terre.style.filter = "grayscale(100%)";
+                feu.style.filter = "grayscale(100%)";
+                air.style.filter = "grayscale(100%)";
+                arme.style.filter = "grayscale(100%)";
+                tech.style.filter = "grayscale(100%)";
+                if (eau.style.filter == "grayscale(100%)") {
+                    eau.style.filter = "";
+                }
+                break;
+            case maitrise = "terre":
+                eau.style.filter = "grayscale(100%)";
+                feu.style.filter = "grayscale(100%)";
+                air.style.filter = "grayscale(100%)";
+                arme.style.filter = "grayscale(100%)";
+                tech.style.filter = "grayscale(100%)";
+                if (terre.style.filter == "grayscale(100%)") {
+                    terre.style.filter = "";
+                }
+                break;
+            case maitrise = "feu":
+                eau.style.filter = "grayscale(100%)";
+                terre.style.filter = "grayscale(100%)";
+                air.style.filter = "grayscale(100%)";
+                arme.style.filter = "grayscale(100%)";
+                tech.style.filter = "grayscale(100%)";
+                if (feu.style.filter == "grayscale(100%)") {
+                    feu.style.filter = "";
+                }
+                break;
+            case maitrise = "air":
+                terre.style.filter = "grayscale(100%)";
+                feu.style.filter = "grayscale(100%)";
+                eau.style.filter = "grayscale(100%)";
+                arme.style.filter = "grayscale(100%)";
+                tech.style.filter = "grayscale(100%)";
+                if (air.style.filter == "grayscale(100%)") {
+                    air.style.filter = "";
+                }
+                break;
+            case maitrise = "arme":
+                terre.style.filter = "grayscale(100%)";
+                feu.style.filter = "grayscale(100%)";
+                air.style.filter = "grayscale(100%)";
+                eau.style.filter = "grayscale(100%)";
+                tech.style.filter = "grayscale(100%)";
+                if (arme.style.filter == "grayscale(100%)") {
+                    arme.style.filter = "";
+                }
+                break;
+            case maitrise = "tech":
+                terre.style.filter = "grayscale(100%)";
+                feu.style.filter = "grayscale(100%)";
+                air.style.filter = "grayscale(100%)";
+                arme.style.filter = "grayscale(100%)";
+                eau.style.filter = "grayscale(100%)";
+                if (tech.style.filter == "grayscale(100%)") {
+                    tech.style.filter = "";
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    function SavePersonnage(IDPersonnage) {
+        var data = {};
+
+        data.pNom = $("#NomPersonnage").val();
+        data.pId = IDPersonnage;
+        data.pMaitrise = $("input[name=maitrise]:checked").val();
+        data.pCreativite = $("#Creativite").val();
+        data.pConcentration = $("#Concentration").val();
+        data.pHarmonie = $("#Harmonie").val();
+        data.pEnthousiasme = $("#Enthousiasme").val();
+        data.pEquilibre = $("input[name=radioequilibre]:checked").val();
+
+        if ($("#etat-confus").is(":checked")) { data.pEtatConfus = 1; } else { data.pEtatConfus = 0; }
+        if ($("#etat-coupable").is(":checked")) { data.pEtatCoupable = 1; } else { data.pEtatCoupable = 0; }
+        if ($("#etat-colere").is(":checked")) { data.pEtatColere = 1; } else { data.pEtatColere = 0; }
+        if ($("#etat-fragile").is(":checked")) { data.pEtatFragile = 1; } else { data.pEtatFragile = 0; }
+        if ($("#etat-terrifie").is(":checked")) { data.pEtatTerrifie = 1; } else { data.pEtatTerrifie = 0; }
+
+
+        if ($("#fatigue5").is(":checked")) {
+            data.pFatigue = 5;
+        }
+        else if ($("#fatigue4").is(":checked")) {
+            data.pFatigue = 4;
+        }
+        else if ($("#fatigue3").is(":checked")) {
+            data.pFatigue = 3;
+        }
+        else if ($("#fatigue2").is(":checked")) {
+            data.pFatigue = 2;
+        }
+        else if ($("#fatigue1").is(":checked")) {
+            data.pFatigue = 1;
+        }
+        else {
+            data.pFatigue = 0;
+        }
+
+        console.log(data);
+
+        $.ajax({
+            type: 'POST',
+            url: '/Avatar/SavePersonnage',
+            data: data,
+            async: true,
+            success:
+                function () {
+                    alert("Votre Personnage a bien été enregistrer.");
+                },
+            error:
+                function () {
+                    alert("Votre Personnage n'as pas pu être enregistrer.");
+                }
+        })
+    }
+</script>
+
+@*NOM DU PERSONNAGE*@
+<input type="text" placeholder="NOM" class="align-mid input-text-avatar" value="@personnage.Nom" id="NomPersonnage"/>
+
+@*ENTRAINEMENT DU PERSONNAGE*@
+<div class="row align-mid" style="width:600px;margin-top:20px;">
+    <label class="row align-mid" style="text-align:center;">ENTRAINEMENT</label>
+    <div class="row">
+        <div class="col">
+            <label for="maitrise-eau"><img src="~/Images/Avatar/eau.png" style="cursor:pointer;" id="img-eau" /></label>
+            <input type="radio" name="maitrise" id="maitrise-eau" class="input-radio-maitrise align-mid" onclick="grayfilter('eau')" @if (personnage.Maitrise == 1) { <text> checked </text> } value="1"/>
+        </div>
+        <div class="col">
+            <label for="maitrise-terre"><img src="~/Images/Avatar/terre.png" style="cursor:pointer;" id="img-terre" /></label>
+            <input type="radio" name="maitrise" id="maitrise-terre" class="input-radio-maitrise align-mid" onclick="grayfilter('terre')" @if (personnage.Maitrise == 2) { <text> checked </text> } value="2"/>
+        </div>
+        <div class="col">
+            <label for="maitrise-feu"><img src="~/Images/Avatar/feu.png" style="cursor:pointer;" id="img-feu" /></label>
+            <input type="radio" name="maitrise" id="maitrise-feu" class="input-radio-maitrise align-mid" onclick="grayfilter('feu')" @if (personnage.Maitrise == 3) { <text> checked </text> } value="3"/>
+        </div>
+        <div class="col">
+            <label for="maitrise-air"><img src="~/Images/Avatar/air.png" style="cursor:pointer;" id="img-air" /></label>
+            <input type="radio" name="maitrise" id="maitrise-air" class="input-radio-maitrise align-mid" onclick="grayfilter('air')" @if (personnage.Maitrise == 4) { <text> checked </text> } value="4"/>
+        </div>
+        <div class="col">
+            <label for="maitrise-arme"><img src="~/Images/Avatar/arme.png" style="cursor:pointer;" id="img-arme" /></label>
+            <input type="radio" name="maitrise" id="maitrise-arme" class="input-radio-maitrise align-mid" onclick="grayfilter('arme')" @if (personnage.Maitrise == 5) { <text> checked </text> } value="5"/>
+        </div>
+        <div class="col">
+            <label for="maitrise-tech"><img src="~/Images/Avatar/tech.png" style="cursor:pointer;" id="img-tech" /></label>
+            <input type="radio" name="maitrise" id="maitrise-tech" class="input-radio-maitrise align-mid" onclick="grayfilter('tech')" @if (personnage.Maitrise == 6) { <text> checked </text> } value="6"/>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <input type="number" value="@personnage.Creativite" id="Creativite" max="100" min="0"/>
+    <label>Créativité</label>
+</div>
+<div>
+    <input type="number" value="@personnage.Concentration" id="Concentration" max="100" min="0"/>
+    <label>Concentration</label>
+</div>
+<div>
+    <input type="number" value="@personnage.Harmonie" id="Harmonie" max="100" min="0"/>
+    <label>Harmonie</label>
+</div>
+<div>
+    <input type="number" value="@personnage.Enthousiasme" id="Enthousiasme" max="100" min="0"/>
+    <label>Enthousiasme</label>
+</div>
+
+
+<div>
+    <label>État</label>
+    <div>
+        <input id="etat-confus" type="checkbox" @if (personnage.EtatConfus == 1) { <text> checked </text> } />
+        <label for="etat-confus">Confus</label>
+    </div>
+    <div>
+        <input id="etat-coupable" type="checkbox" @if (personnage.EtatCoupable == 1) { <text> checked </text> } />
+        <label for="etat-coupable">Coupable</label>
+    </div>
+    <div>
+        <input id="etat-colere" type="checkbox" @if (personnage.EtatColere == 1) { <text> checked </text> } />
+        <label for="etat-colere">En Colère</label>
+    </div>
+    <div>
+        <input id="etat-fragile" type="checkbox" @if (personnage.EtatFragile == 1) { <text> checked </text> } />
+        <label for="etat-fragile">Fragile</label>
+    </div>
+    <div>
+        <input id="etat-terrifie" type="checkbox" @if (personnage.EtatTerrifie == 1) { <text> checked </text> } />
+        <label for="etat-terrifie">Terrifié</label>
+    </div>
+</div>
+
+
+<div>
+    <label>Équilibre</label>
+    <input type="radio" name="radioequilibre" value="1" @if (personnage.Equilibre == 1) { <text> checked </text> }/>
+    <input type="radio" name="radioequilibre" value="2" @if (personnage.Equilibre == 2) { <text> checked </text> }/>
+    <input type="radio" name="radioequilibre" value="3" @if (personnage.Equilibre == 3) { <text> checked </text> }/>
+    <input type="radio" name="radioequilibre" value="4" @if (personnage.Equilibre == 4) { <text> checked </text> }/>
+    <input type="radio" name="radioequilibre" value="5" @if (personnage.Equilibre == 5) { <text> checked </text> }/>
+    <input type="radio" name="radioequilibre" value="6" @if (personnage.Equilibre == 6) { <text> checked </text> }/>
+    <input type="radio" name="radioequilibre" value="7" @if (personnage.Equilibre == 7) { <text> checked </text> }/>
+</div>
+
+<div>
+    <label>Fatigue</label>
+    <input type="checkbox" @if (personnage.Fatigue >= 1) { <text> checked </text> } value="1" id="fatigue1"/>
+    <input type="checkbox" @if (personnage.Fatigue >= 2) { <text> checked </text> } value="2" id="fatigue2"/>
+    <input type="checkbox" @if (personnage.Fatigue >= 3) { <text> checked </text> } value="3" id="fatigue3"/>
+    <input type="checkbox" @if (personnage.Fatigue >= 4) { <text> checked </text> } value="4" id="fatigue4"/>
+    <input type="checkbox" @if (personnage.Fatigue == 5) { <text> checked </text> } value="5" id="fatigue5"/>
+</div>
+
+
+<button onclick="SavePersonnage(@personnage.Id)">Enregistrer le Personnage</button>

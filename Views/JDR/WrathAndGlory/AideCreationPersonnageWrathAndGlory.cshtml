@@ -1,0 +1,357 @@
+﻿<p>
+    <h2>POINTS D'EXPERIENCES</h2><br />
+    Expérience de départ à la création de perso<br />
+    Tier 1 100px<br />
+    Tier 2 200px<br />
+    Tier 3 300px<br />
+    Tier 4 400px<br />
+    <br />
+
+    <h2>MOTS-CLES</h2>
+    utilisé comme modificateur sur des tests ou pour déterminer l'aquisition de talents, équipements et autres<br />
+    entre [] pour définir un mot clé<br />
+
+    <h2>ARCHETYPES</h2>
+    Choisir un archétype (dépense de l'XP)<br />
+    Chaque archétype a des bonus et actions spécifiques a chacun<br />
+    <br />
+
+    <h2>ATTRIBUTS</h2>
+    Tous les attributs commencent à 1<br />
+    Cout total pour la création du perso cf p24<br />
+    Cout progessif pour l'amélioration du perso cf p24<br />
+    En fonction des espèces la valeur maximum des attributs changent et ne peut pas être dépassé sauf amélioration cybernétique (qui agit comme un bonus d'attribut) cf. p25<br />
+    Score de 2 : la moyenne<br />
+    Score de 7 : le plus élevé<br />
+    Score de 8 : le summum et maximum absolu<br />
+    <br />
+
+    <h2>COMPETENCES</h2>
+    cout total pour la creation du perso (comp 0) cf p25<br />
+    cout progressif pour l'amélioration du perso cf p25<br />
+    Score de 2 : la moyenne<br />
+    <br />
+
+    <h2>TALENTS</h2>
+    Apprendre 1 ou 2 talent lors de la creation du perso<br />
+    <br />
+
+    <h2>POUVOIRS PSY</h2>
+    Pouvoirs avec archétypes<br />
+    <br />
+
+    <h2>ESPECES</h2>
+    Regarder le tableau page 29 pour les bonus et aptitudes spécifique a chaque espèces<br />
+    <br />
+
+    <h3>OBJECTIFS</h3>
+    Si un joueur complète son objectif pendant une partie il gagne un point de fureur<br />
+
+    <h3>LANGUES</h3>
+    pour chaque langue que le joueur veut / peut apprendre 1XP<br />
+    <br />
+
+    Détails physiques de personnages pages 32-33<br />
+    Détails sur l'histoire du perso pages 34-35-36<br />
+    <br />
+
+    Rang équivaut au niveau (début 1)<br />
+    <br />
+
+    <h2>TRAITS</h2>
+    Traits bonus malus commencent tous a 1 sauf corruption<br />
+    <h3>TRAITS COMBAT</h3>
+    <h4>DEFENSE</h4>
+    défense symbolise la difficuleté a être touché (Init -1)<br />
+    jet d'attaque supérieur ou égal a la défense pour toucher<br />
+    <h4>RESISTANCE</h4>
+    résistance de base Endu +1 (ajouter la valeur de l'armure)<br />
+    soustraire la resistance au dégat subits pour connaitre le nombre de bléssure infligées<br />
+    <h4>BLESSURES</h4>
+    nombre de blessures a subire avant de mourir<br />
+    le maximum de blessure vaut les tier x 2 + l'Endurence<br />
+    si les dégats subits sont suppérieurs au nombre de blessures max ---> mourrant<br />
+    pour récup des blessures: compétences Medicae ou repos<br />
+    <h4>DETERMINATION</h4>
+    valeur Determination vaut l'Endu<br />
+    la determinatino permet de faire un jet quand on prend des dégats pour les annuler contre une augmentation du stress<br />
+    <h4>STRESS</h4>
+    niveau max de stress vaut la force mental + le tier<br />
+    augmentation du niveau de stress dans utilisation de determination et / ou dépassement de limites psychologiques<br />
+    si on prend plus de stress que le max --> fatigué<br />
+    pour enlever du stress se reposer<br />
+    <h3>TRAITS MENTAUX</h3>
+    <h4>Corruption</h4>
+    démarre a 0 sauf avec certains talents et aptitudes<br />
+    gagner des points de corruptions en ratant des jet de corruptions<br />
+    jet de corruption égal à la conviction<br />
+    <h4>CONVICTIONS</h4>
+    test de corruptions pour resister à la corruption et au chaos<br />
+    conviction égale à la force mentale<br />
+    <h4>RESOLUTION</h4>
+    résolution égale a force mentale -1 (1 min)<br />
+    utilisé contre la condition effrayé et autres condition psychologiques<br />
+    <h4>VIGILANCE PASSIVE</h4>
+    vigiance passive égale comppétence vigilance / 2 (arrondi sup)<br />
+    <h3>TRAITS SOCIAUX</h3>
+    <h4>INFLUENCE</h4>
+    indication du niveau sociale et réputation<br />
+    influence égale Socia -1<br />
+    <h4>RICHESSE</h4>
+    richesse égale Tier modifiable avec talents et / ou aptitudes<br />
+    +1pt Richesse = 1XP (juste creation perso et 4 max)<br />
+    <br /><br />
+    <h2>CREATION AVANCEE</h2>
+    si creation avancée d'un perso bonus d'XP = Tier x 10<br />
+    achat d'aptitudes d'archétype Tier de l'archétype x 10<br />
+    achat possible de pack d'ascenssion<br />
+    attributs à 1 et compétences à 0<br />
+    pour l'équipement a prendre voir page 39<br />
+    <br /><br /><br /><br />
+
+    @{ 
+        #region /\ Archétype /\
+    }
+    <h1>LES ARCHETYPES</h1>
+    <h2>SOEUR HOSPITALIERE</h2>
+    Tier 1      Humain      24XP<br />
+    IMPERIUM, ADEPTUS MINISTURUM, ADEPTA SORORITAS, [ORDRE]<br />
+    APTITUDE ARCHETYPE: bonus sur jet de soins sur allié<br /><br />
+
+    <h2>PRETRE DU MINISTRUM</h2>
+    Tier 1      Humain      12XP<br />
+    IMPERIUM, ADEPTUS MINISTRUM<br />
+    APTITUDE ARCHETYPE: soigne points de stress (1 gratuit par combat)<br /><br />
+
+    <h2>GARDE IMPERIAL</h2>
+    Tier 1      Humain      6XP<br />
+    IMPERIUM, ASTRA MILITARUM, REGIMENT<br />
+    APTITUDE ARCHETYPE: s'interpose entre une attaque ennemi et un allié (avec bonus de resistance)<br /><br />
+
+    <h2>ACOLYTE DE L'INQUISITION</h2>
+    Tier 1      Humain      6XP<br />
+    IMPERIUM, INQUISITION, [ORDO], [AU CHOIX]<br />
+    APTITUDE ARCHETYPE: Bonus sur jet de competence sociale sur IMPERIUM<br /><br />
+
+    <h2>SAGE DE L'INQUISITION</h2>
+    Tier 1      Humain      16XP<br />
+    ADEPTUS ADMINISTRATUM, IMPERIUM, INQUISITION, [ORDO]<br />
+    APTITUDE ARCHETYPE: Bonus sur jet de collecte information de sources impériales, jet influence ou investigation<br /><br />
+
+    <h2>GANGER</h2>
+    Tier 1      Humain      2XP<br />
+    RACAILLES, [AU CHOIX]<br />
+    APTITUDES ARCHETYPE: Bonus sur jet de ruse et jet influence pour aquerir objet (1 / session)<br /><br />
+
+    <h2>ADEPTE DE LA TECHNOLOGIE</h2>
+    Tier 1      Humain      22XP<br />
+    IMPERIUM, ADEPTUS MECHANICUS, [MONDE-FORGE]<br />
+    APTITUDE ARCHETYPE: pas compris p109 FORSAKEN<br /><br />
+
+    <h2>TIREUR D'ELITE</h2>
+    Tier 1      Humain      54XP<br />
+    IMPERIUM, ASTRA MILITARUM, [REGIMENT], ABHUMAIN, MILITARUM AUXILIA<br />
+    APTITUDE ARCHETYPE: bonus arme tireur d'élite, mouvement en action reflexe si tir réussi<br /><br />
+
+    <h2>CORSAIRE</h2>
+    Tier 1      Aeldari     16XP<br />
+    AELDARI, ANTHRATHE, [COTERIE]<br />
+    APTITUDE ARCHETYPE: Bonus contre athletisme et persuasion, malus jet peur<br /><br />
+
+    <h2>BOY ORK</h2>
+    Tier 1      Ork         26XP<br />
+    ORK, [CLAN]<br />
+    APTITUDE ARCHETYPE: Bonus attaque mêlée si allié attaque la même cible<br /><br /><br />
+
+    <h2>MERCENAIRE KROOT</h2>
+    Tier 1      Kroot       62XP<br />
+    KROOT<br />
+    APTITUDE ARCHETYPE: choisir un mot clé qu choix (changeable)<br /><br />
+
+    <h2>SOEUR DE BATAILLE</h2>
+    Tier 2      Humain      64XP<br />
+    IMPERIUM, ADEPTUS MINISTORUM, ADEPTA SORORITAS, [ORDRE]<br />
+    APTITUDE ARCHETYPE: bonus corruption (joueur et alliés courte portée) et bonus sur jet contre pouvoir psy<br /><br />
+
+    <h2>PSYKER ASSERMENTE</h2>
+    Tier 2      Humain      32XP<br />
+    IMPERIUM, ADEPTUS ASTRA TELEPATHICA, PSYKER, SCHOLASTIA PSYKANA<br />
+    APTITUDE ARCHETYPE: vous avez PP universels, 1 PP mineur et PP chatiment<br /><br />
+
+    <h2>SKITARII</h2>
+    Tier 2      Humain      28XP<br />
+    IMPERIUM, ADEPTUS MECHANICUS, SKITARII, [MONDE-FORGE]<br />
+    APTITUDE ARCHETYPE: aucun saignement et bonus jet determination<br /><br />
+
+    <h2>ASSSASSIN DU CLUTE DE LA MORT</h2>
+    Tier 2      Humain      36XP<br />
+    IMPERIUM, ADEPTUS MINISTORUM<br />
+    APTITUDE ARCHETYPE: lire p102 trop chiant a résumé<br /><br />
+
+    <h2>FILS DE TEMPESTUS</h2>
+    Tier 2      Humain      52XP<br />
+    IMPERIUM, ASTRA MILITARUM, MILITARUM TEMPETUS<br />
+    APTITUDE ARCHETYPE: bonus degat quand gloire utilisé<br /><br />
+
+    <h2>LIBRE MARCHANT</h2>
+    Tier 2      Humain      36XP<br />
+    IMPERIUM, ROGUE TRADER, [DYNASTIE]<br />
+    APTITUDE ARCHETYPE: bonus sur jet de persuasion et influence pour acquisition objet<br /><br />
+
+    <h2>FOUISSEUR</h2>
+    Tier 2      Humain      16XP<br />
+    RACAILLES, [AU CHOIX]<br />
+    APTITUDE ARCHETYPE: Choisir 2 mutations et 1 mutaion par augmentation de rang (optionnel)<br /><br />
+
+    <h2>SCOUT SPACE MARINE</h2>
+    Tier 2      Humain      170XP<br />
+    IMPERIUM, ADEPTUS ASTARTES, [CHAPITRE]<br />
+    APTITUDE ARCHETYPE: bonus sur jet de furtivité quand cachette accessible<br /><br />
+
+    <h2>TECHNOPRETRE</h2>
+    Tier 2      Humain      44XP<br />
+    IMPERIUM, ADEPTUS MECHANICUS, CULTE MECHANICUS, [MONDE-FORGE]<br />
+    APTITUDE ARCHETYPE: bonus technomaitrise et temps / 2<br /><br />
+
+    <h2>SOEUR REPENTante</h2>
+    Tier 2      Humain      70XP<br />
+    IMPERIUM, ADEPTUS MINISTORUM, ADEPTA SORORITAS, [ORDRE]<br />
+    APTITUDE ARCHETYPE: pas de malus de blessée, bonus attaque mêlée quand blessée et bonus contre effet PP<br /><br />
+
+    <h2>CONFESSEUR</h2>
+    Tier 2      Humain      90XP<br />
+    IMPERIUM, ADEPTUS MINISTORUM<br />
+    APTITUDE ARCHETYPE: bonus sut jet de péché d'un perso, dans un groupe choisir un membre fidèle pour regagne tous ses fatigues<br />
+
+    <h2>GUERRIER OGRYN</h2>
+    Tier 2      Orgryn      98XP<br />
+    IMPERIUM, ASTRA MILITARUM, MILITARUM AUXILIA, [REGIMENT], ABHUMAIN<br />
+    APTITUDE ARCHETYPE: attaque gratuite, et bonus qui vont avec<br /><br />
+
+    <h2>LEXMECHANIC</h2>
+    Tier 2      Humain      44XP<br />
+    IMPERIUM, INQUISITION, [ORDRE], ADEPTUS MECHANICUS, [MONDE-FORGE]<br />
+    APTITUDE ARCHETYPE: offre bonus au alliés<br /><br />
+
+    <h2>INTERROGATEUR</h2>
+    Tier 2      Humain      64XP<br />
+    IMPERIUM, INQUISITION, [ORDRE], [AU CHOIX]<br />
+    APTITUDE ARCHETYPE: si test réussi pour avoir des infos d'un type déplacement gratuit<br /><br />
+
+    <h2>RANGER</h2>
+    Tier 2      Aeldari     34XP<br />
+    AELDARI, ASURYANI<br />
+    APTITUDE ARCHETYPE: bonus contre detection<br /><br />
+
+    <h2>KOMMANDO</h2>
+    Tier 2      Ork         54XP<br />
+    ORK, [CLAN]<br />
+    APTITUDE ARCHETYPE: bonus furtivité pour joueur et allié proche<br /><br />
+
+    <h2>CROISE</h2>
+    Tier 3      Humain      54XP<br />
+    IMPERIUM, ADEPTUS MINISTORUM<br />
+    APTITUDE ARCHETYPE: bonus attaque mêlée contre chaos ou hérétique<br /><br />
+
+    <h2>COMMISAIRE IMPERIAL</h2>
+    Tier 3      Humain      76XP<br />
+    IMPERIUM, ASTRA MILITARUM, OFFICIO PARFECTUS<br />
+    APTITUDE ARCHETYPE: bonus sur jet resolution (joueur et allié proche) et bonus intimidation<br /><br />
+
+    <h2>DESPERADO</h2>
+    Tier 3      Humain      52XP<br />
+    RACAILLES, [AU CHOIX]<br />
+    APTITUDE ARCHETYPE: bonus jet ruse et pistage<br /><br />
+
+    <h2>SPACE MARINE TACTIQUE</h2>
+    Tier 3      Adeptus Astartes    277XP<br />
+    IMPERIUM, ADEPTUS ASTARTES, [CHAPITRE]<br />
+    APTITUDE ARCHETYPE: si coup critique faire 2 jet et choisir<br /><br />
+
+    <h2>DIALOGUS</h2>
+    Tier 3      Humain      146XP<br />
+    IMPERIUM, ADEPTUS MINISTORUM, ADEPTA SORORITAS, [ORDRE]<br />
+    APTITUDE ARCHETYPE: quand tu parle au nom de quelqu'un d'autre bonus sur le test et bonus de communication<br /><br />
+
+    <h2>IMAGIFIER</h2>
+    Tier 3      Humain      146XP<br />
+    IMPERIUM, ADEPTUS MINISTORUM, ADEPTA SORORITAS, [ORDRE]<br />
+    APTITUDE ARCHETYPE: si alliée fidèle au culte impériale proche bonus, même chose si on plante le simulacrum<br /><br />
+
+    <h2>SERAPHIN</h2>
+    Tier 3      Humain      118XP<br />
+    IMPERIUM, ADEPTUS MINISTORUM, ADEPTA SORORITAS, [ORDRE]<br />
+    APTITUDE ARCHETYPE: bonus pour tous les alliés fidèle proche et pas d'attaque reflexe quand utilisation de jet pack<br /><br />
+
+    <h2>INFILTRATEUR SICARIEN</h2>
+    Tier 3      Humain      76XP<br />
+    IMPERIUM, ADEPTUS MECHANICUS, [MONDE-FORGE]<br />
+    APTITUDE ARCHETYPE: immunisé contre les saignements, affecte la condition gêné a tous les personnages proches<br /><br />
+
+    <h2>RUSTSTALKER SICARIEN</h2>
+    Tier 3      Humain      76XP<br />
+    IMPERIUM, ADEPTUS MECHANICUS, [MONDE-FORGE]<br />
+    APTITUDE ARCHETYPE: immunisé contre les saignements, bonus avec les armes TRANSONIC<br /><br />
+
+    <h2>BULLGRYN</h2>
+    Tier 3      Ogryn       172XP<br />
+    IMPERIUM, ASTRA MILITARUM, MILITARUM AUXILIA, [REGIMENT], ABHUMAIN<br />
+    APTITUDE AAARCHETYPE: bonus d'armure pour les alliés très proches<br /><br />
+
+    <h2>PSYCHARQUE</h2>
+    Tier 3      Aeldari     56XP<br />
+    AELDARI, ASURYANI, PSYKER, [VAISSEAU-MONDE]<br />
+    APTITUDE ARCHETYPE: PP universels, PP Chatiment, pouvoir rune de batailles au choix<br /><br />
+
+    <h2>NOB ORK</h2>
+    Tier 3      Ork         56XP<br />
+    ORK, [CLAN]<br />
+    APTITUDE ARCHETYPE: commande groupe de boyz<br /><br />
+
+    <h2>INQUISITEUR</h2>
+    Tier 4      Humain      110XP<br />
+    IMPERIUM, INQUISITION, [ORDO], [AU CHOIX]<br />
+    APTITUDE ARCHETYPE: bonus sur jet competence sociale<br /><br />
+
+    <h2>INTERCESSOR PRIMARIS</h2>
+    Tier 4      Primaris Astartes   300XP<br />
+    ADEPTUS ASTARTES, IMPERIUM, PRIMARIS, [CHAPITRE]<br />
+    APTITUDE ARCHETYPE: bonus sur jet tir avec arme PRIMARIS<br /><br />
+
+    <h2>CHANOINESSE</h2>
+    Tier 4      Humain      249XP<br />
+    IMPERIUM, ADEPTUS MINISTORUM, ADEPTA SORORITAS, [ODRE]<br />
+    APTITUDE ARCHETYPE: gagne de la foi et peut echange 1 de foi contre 1 de gloire<br /><br />
+
+    <h2>APOTHICAIRE ASTARTES</h2>
+    Tier 4      Adeptus Astartes      357XP<br />
+    IMPERIUM, ADEPTUS ASTARTES, [CHAPITRE]<br />
+    APTITUDE ARCHETYPE: si un test de MEDICAE reussi plus de blessure enlevées<br /><br />
+
+    <h2>CHAPELAIN ASTARTES</h2>
+    Tier 4      Adeptus Astartes      392XP<br />
+    IMPERIUM, ADEPTUS ASTARTES, [CHAPITRE]<br />
+    APTITUDES ARCHETYPE: y a beaucoup de trucs p106 FORSAKEN<br /><br />
+
+    <h2>LIBRAIRE ASTARTES</h2>
+    Tier 4      Adeptus Astartes      359XP<br />
+    IMPERIUM, ADEPTUS ASTARTES, [CHAPITRE]<br />
+    APTITUDE ARCHETYPE: PP universels, PP frappe, ajoute d'autres pouvoirs<br /><br />
+
+    <h2>PRIMARIS REIVER</h2>
+    Tier 4      Primaris Astartes     288XP<br />
+    IMPERIUM, ADEPTUS ASTARTES, PRIMARIS, [CHAPITRE]<br />
+    APTITUDE ARCHETYPE: bonus furtivité et embuscade<br /><br />
+
+    <h2>TECHNO-PRETRE DOMINUS</h2>
+    Tier 4      Humain      113XP<br />
+    IMPERIUM, ADEPTUS MECHANICUS, [MONDE-FORGE]<br />
+    APTITUDE ARCHETYPE: aide tous les allié ADEPTUS MECHANICUS proche ou bonus sur test avec ésprit machine<br /><br />
+
+    @{ 
+        #endregion
+    }
+
+    <h2>FOI</h2>
+    Apprendre un talent de foi donne un point de foi supplémentaire et une aptitude.
+</p>

@@ -1,0 +1,1608 @@
+﻿    #input-NOM {
+        z-index: 999;
+        position: absolute;
+        margin-top: 5.2%;
+        margin-left: 38.8%;
+        width: 22.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-NOM:focus {
+            outline: none;
+        }
+
+    #input-CARRIERE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 8%;
+        margin-left: 42.2%;
+        width: 15.8%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-CARRIERE:focus {
+            outline: none;
+        }
+
+    #input-APPARENCE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 10.7%;
+        margin-left: 34.8%;
+        width: 30.4%;
+        height: 5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+        resize: none;
+        overflow: hidden;
+    }
+
+        #input-APPARENCE:focus {
+            outline: none;
+        }
+
+    #input-OBJECTIF-PERSONNEL {
+        z-index: 999;
+        position: absolute;
+        margin-top: 4.5%;
+        margin-left: 5.8%;
+        width: 26.7%;
+        height: 6%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        resize: none;
+        overflow: hidden;
+    }
+
+        #input-OBJECTIF-PERSONNEL:focus {
+            outline: none;
+        }
+
+    #input-CAMARADE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 9.8%;
+        margin-left: 12.4%;
+        width: 19.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-CAMARADE:focus {
+            outline: none;
+        }
+
+    #input-RIVAL {
+        z-index: 999;
+        position: absolute;
+        margin-top: 11.2%;
+        margin-left: 12.4%;
+        width: 19.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-RIVAL:focus {
+            outline: none;
+        }
+
+    #input-TALENT1 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 4.8%;
+        margin-left: 67.5%;
+        width: 26.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        resize: none;
+        overflow: hidden;
+    }
+
+        #input-TALENT1:focus {
+            outline: none;
+        }
+
+    #input-TALENT2 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 6.8%;
+        margin-left: 67.5%;
+        width: 26.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        resize: none;
+        overflow: hidden;
+    }
+
+        #input-TALENT2:focus {
+            outline: none;
+        }
+
+    #input-TALENT3 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 8.6%;
+        margin-left: 67.5%;
+        width: 26.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        resize: none;
+        overflow: hidden;
+    }
+
+        #input-TALENT3:focus {
+            outline: none;
+        }
+
+    #input-TALENT4 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 10.6%;
+        margin-left: 67.5%;
+        width: 26.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        resize: none;
+        overflow: hidden;
+    }
+
+        #input-TALENT4:focus {
+            outline: none;
+        }
+
+    #input-OBJET-MINUSCULE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 22.5%;
+        margin-left: 82.4%;
+        width: 11.9%;
+        height: 10%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        resize: none;
+        overflow: hidden;
+    }
+
+        #input-OBJET-MINUSCULE:focus {
+            outline: none;
+        }
+
+    #input-OBJET-FETICHE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 29.7%;
+        margin-left: 75.6%;
+        width: 18.7%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-OBJET-FETICHE:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT1 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 32.7%;
+        margin-left: 72.4%;
+        width: 21.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT1:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT2 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 34.2%;
+        margin-left: 72.4%;
+        width: 21.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT2:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT3 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 35.7%;
+        margin-left: 72.4%;
+        width: 21.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT3:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT4 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 37.2%;
+        margin-left: 72.4%;
+        width: 21.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT4:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT5 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 38.7%;
+        margin-left: 72.4%;
+        width: 21.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT5:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT6 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 40.1%;
+        margin-left: 72.4%;
+        width: 21.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT6:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT7 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 41.5%;
+        margin-left: 72.4%;
+        width: 21.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT7:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT8 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 43%;
+        margin-left: 72.4%;
+        width: 21.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT8:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT9 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 44.5%;
+        margin-left: 72.4%;
+        width: 21.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT9:focus {
+            outline: none;
+        }
+
+    #input-EQUIPEMENT10 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 46%;
+        margin-left: 73%;
+        width: 21%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-EQUIPEMENT10:focus {
+            outline: none;
+        }
+
+    #input-BLESSURE-CRITIQUE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 29.8%;
+        margin-left: 5.7%;
+        width: 19.9%;
+        height: 6.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        resize: none;
+        overflow: hidden;
+    }
+
+        #input-BLESSURE-CRITIQUE:focus {
+            outline: none;
+        }
+
+    #input-PROTECTION {
+        z-index: 999;
+        position: absolute;
+        margin-top: 37.4%;
+        margin-left: 31%;
+        width: 10.4%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-PROTECTION:focus {
+            outline: none;
+        }
+
+    #input-ARMES1 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 40.7%;
+        margin-left: 31%;
+        width: 20.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-ARMES1:focus {
+            outline: none;
+        }
+
+    #input-ARMES2 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 42.7%;
+        margin-left: 31%;
+        width: 20.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-ARMES2:focus {
+            outline: none;
+        }
+
+    #input-ARMES3 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 44.6%;
+        margin-left: 31%;
+        width: 20.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-ARMES3:focus {
+            outline: none;
+        }
+
+    #input-ARMES4 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 46%;
+        margin-left: 31%;
+        width: 20.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+    }
+
+        #input-ARMES4:focus {
+            outline: none;
+        }
+
+    #input-FORCE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 20.6%;
+        margin-left: 49%;
+        width: 2%;
+        height: 4.5%;
+        background: none;
+        border: none;
+        font-size: 40px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-FORCE:focus {
+            outline: none;
+        }
+
+        #input-FORCE::-webkit-outer-spin-button, #input-FORCE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-ENDURENCE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 18.5%;
+        margin-left: 63.8%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-ENDURENCE:focus {
+            outline: none;
+        }
+
+        #input-ENDURENCE::-webkit-outer-spin-button, #input-ENDURENCE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-COMBAT-RAPPROCHE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 15.2%;
+        margin-left: 49.1%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-COMBAT-RAPPROCHE:focus {
+            outline: none;
+        }
+
+        #input-COMBAT-RAPPROCHE::-webkit-outer-spin-button, #input-COMBAT-RAPPROCHE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-MACHINES-LOURDES {
+        z-index: 999;
+        position: absolute;
+        margin-top: 18.5%;
+        margin-left: 34.2%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-MACHINES-LOURDES:focus {
+            outline: none;
+        }
+
+        #input-MACHINES-LOURDES::-webkit-outer-spin-button, #input-MACHINES-LOURDES::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-ESPRIT {
+        z-index: 999;
+        position: absolute;
+        margin-top: 25.1%;
+        margin-left: 55.7%;
+        width: 2%;
+        height: 4.5%;
+        background: none;
+        border: none;
+        font-size: 40px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-ESPRIT:focus {
+            outline: none;
+        }
+
+        #input-ESPRIT::-webkit-outer-spin-button, #input-ESPRIT::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-OBSERVATION {
+        z-index: 999;
+        position: absolute;
+        margin-top: 22.4%;
+        margin-left: 76.8%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-OBSERVATION:focus {
+            outline: none;
+        }
+
+        #input-OBSERVATION::-webkit-outer-spin-button, #input-OBSERVATION::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-SURVIE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 26%;
+        margin-left: 75.6%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-SURVIE:focus {
+            outline: none;
+        }
+
+        #input-SURVIE::-webkit-outer-spin-button, #input-SURVIE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-COMTECH {
+        z-index: 999;
+        position: absolute;
+        margin-top: 28.3%;
+        margin-left: 70.5%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-COMTECH:focus {
+            outline: none;
+        }
+
+        #input-COMTECH::-webkit-outer-spin-button, #input-COMTECH::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-EMPATHIE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 29.6%;
+        margin-left: 49%;
+        width: 2%;
+        height: 4.5%;
+        background: none;
+        border: none;
+        font-size: 40px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-EMPATHIE:focus {
+            outline: none;
+        }
+
+        #input-EMPATHIE::-webkit-outer-spin-button, #input-EMPATHIE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-SOINS-MEDICAUX {
+        z-index: 999;
+        position: absolute;
+        margin-top: 32.1%;
+        margin-left: 66.5%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-SOINS-MEDICAUX:focus {
+            outline: none;
+        }
+
+        #input-SOINS-MEDICAUX::-webkit-outer-spin-button, #input-SOINS-MEDICAUX::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-MANIPULATION {
+        z-index: 999;
+        position: absolute;
+        margin-top: 35.5%;
+        margin-left: 49%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-MANIPULATION:focus {
+            outline: none;
+        }
+
+        #input-MANIPULATION::-webkit-outer-spin-button, #input-MANIPULATION::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-COMMANDEMENT {
+        z-index: 999;
+        position: absolute;
+        margin-top: 32.1%;
+        margin-left: 31.5%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-COMMANDEMENT:focus {
+            outline: none;
+        }
+
+        #input-COMMANDEMENT::-webkit-outer-spin-button, #input-COMMANDEMENT::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-AGILITE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 25.1%;
+        margin-left: 42.3%;
+        width: 2%;
+        height: 4.5%;
+        background: none;
+        border: none;
+        font-size: 40px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-AGILITE:focus {
+            outline: none;
+        }
+
+        #input-AGILITE::-webkit-outer-spin-button, #input-AGILITE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-PILOTAGE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 28.3%;
+        margin-left: 27.6%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-PILOTAGE:focus {
+            outline: none;
+        }
+
+        #input-PILOTAGE::-webkit-outer-spin-button, #input-PILOTAGE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-MOBILITE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 26%;
+        margin-left: 22.5%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-MOBILITE:focus {
+            outline: none;
+        }
+
+        #input-MOBILITE::-webkit-outer-spin-button, #input-MOBILITE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-COMBAT-A-DISTANCE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 22.4%;
+        margin-left: 21.3%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-COMBAT-A-DISTANCE:focus {
+            outline: none;
+        }
+
+        #input-COMBAT-A-DISTANCE::-webkit-outer-spin-button, #input-COMBAT-A-DISTANCE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-NIVEAU-PROTECTION {
+        z-index: 999;
+        position: absolute;
+        margin-top: 37.6%;
+        margin-left: 42.5%;
+        width: 4.9%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-NIVEAU-PROTECTION:focus {
+            outline: none;
+        }
+
+        #input-NIVEAU-PROTECTION::-webkit-outer-spin-button, #input-NIVEAU-PROTECTION::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-ENCOMBREMENT {
+        z-index: 999;
+        position: absolute;
+        margin-top: 37%;
+        margin-left: 66.5%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-ENCOMBREMENT:focus {
+            outline: none;
+        }
+
+        #input-ENCOMBREMENT::-webkit-outer-spin-button, #input-ENCOMBREMENT::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-AIR {
+        z-index: 999;
+        position: absolute;
+        margin-top: 42.9%;
+        margin-left: 13.8%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-AIR:focus {
+            outline: none;
+        }
+
+        #input-AIR::-webkit-outer-spin-button, #input-AIR::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-NOURRITURE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 42.9%;
+        margin-left: 26.3%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-NOURRITURE:focus {
+            outline: none;
+        }
+
+        #input-NOURRITURE::-webkit-outer-spin-button, #input-NOURRITURE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-ENERGIE {
+        z-index: 999;
+        position: absolute;
+        margin-top: 45.9%;
+        margin-left: 13.8%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-ENERGIE:focus {
+            outline: none;
+        }
+
+        #input-ENERGIE::-webkit-outer-spin-button, #input-ENERGIE::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-EAU {
+        z-index: 999;
+        position: absolute;
+        margin-top: 45.9%;
+        margin-left: 26.3%;
+        width: 1.9%;
+        height: 3.5%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-EAU:focus {
+            outline: none;
+        }
+
+        #input-EAU::-webkit-outer-spin-button, #input-EAU::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-DEGAT1 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 40.7%;
+        margin-left: 59.2%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-DEGAT1:focus {
+            outline: none;
+        }
+
+        #input-DEGAT1::-webkit-outer-spin-button, #input-DEGAT1::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-BONUS1 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 40.7%;
+        margin-left: 53.7%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-BONUS1:focus {
+            outline: none;
+        }
+
+        #input-BONUS1::-webkit-outer-spin-button, #input-BONUS1::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-PORTEE1 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 40.7%;
+        margin-left: 64.7%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-PORTEE1:focus {
+            outline: none;
+        }
+
+        #input-PORTEE1::-webkit-outer-spin-button, #input-PORTEE1::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-DEGAT2 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 42.7%;
+        margin-left: 59.2%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-DEGAT2:focus {
+            outline: none;
+        }
+
+        #input-DEGAT2::-webkit-outer-spin-button, #input-DEGAT2::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-BONUS2 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 42.7%;
+        margin-left: 53.7%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-BONUS2:focus {
+            outline: none;
+        }
+
+        #input-BONUS2::-webkit-outer-spin-button, #input-BONUS2::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-PORTEE2 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 42.7%;
+        margin-left: 64.7%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-PORTEE2:focus {
+            outline: none;
+        }
+
+        #input-PORTEE2::-webkit-outer-spin-button, #input-PORTEE2::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-DEGAT3 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 44.6%;
+        margin-left: 59.2%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-DEGAT3:focus {
+            outline: none;
+        }
+
+        #input-DEGAT3::-webkit-outer-spin-button, #input-DEGAT3::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-BONUS3 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 44.6%;
+        margin-left: 53.7%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-BONUS3:focus {
+            outline: none;
+        }
+
+        #input-BONUS3::-webkit-outer-spin-button, #input-BONUS3::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-PORTEE3 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 44.6%;
+        margin-left: 64.7%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-PORTEE3:focus {
+            outline: none;
+        }
+
+        #input-PORTEE3::-webkit-outer-spin-button, #input-PORTEE3::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-DEGAT4 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 46.4%;
+        margin-left: 59.2%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-DEGAT4:focus {
+            outline: none;
+        }
+
+        #input-DEGAT4::-webkit-outer-spin-button, #input-DEGAT4::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-BONUS4 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 46.4%;
+        margin-left: 53.7%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-BONUS4:focus {
+            outline: none;
+        }
+
+        #input-BONUS4::-webkit-outer-spin-button, #input-BONUS4::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    #input-PORTEE4 {
+        z-index: 999;
+        position: absolute;
+        margin-top: 46.4%;
+        margin-left: 64.7%;
+        width: 4.3%;
+        height: 3%;
+        background: none;
+        border: none;
+        font-size: 30px;
+        font-family: monospace;
+        text-align: center;
+    }
+
+        #input-PORTEE4:focus {
+            outline: none;
+        }
+
+        #input-PORTEE4::-webkit-outer-spin-button, #input-PORTEE4::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    .checkbox-button {
+        cursor: pointer;
+    }
+
+    .checkbox-button__input {
+        opacity: 0;
+        position: absolute;
+    }
+
+    .checkbox-button__control {
+        position: relative;
+        display: inline-block;
+        width: 35px;
+        height: 24px;
+        margin-right: 12px;
+        vertical-align: middle;
+        background-color: inherit;
+        color: #8CB5AF;
+    }
+
+    .checkbox-button__input:checked + .checkbox-button__control:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #8CB5AF;
+    }
+
+    #input-STRESS1 {
+        position: absolute;
+        margin-top: 15.5%;
+        margin-left: 6.15%;
+        z-index: 5;
+    }
+
+    #input-STRESS2 {
+        position: absolute;
+        margin-top: 15.5%;
+        margin-left: 8.55%;
+        z-index: 5;
+    }
+
+    #input-STRESS3 {
+        position: absolute;
+        margin-top: 15.5%;
+        margin-left: 11%;
+        z-index: 5;
+    }
+
+    #input-STRESS4 {
+        position: absolute;
+        margin-top: 15.5%;
+        margin-left: 13.4%;
+        z-index: 5;
+    }
+
+    #input-STRESS5 {
+        position: absolute;
+        margin-top: 15.5%;
+        margin-left: 15.8%;
+        z-index: 5;
+    }
+
+    #input-STRESS6 {
+        position: absolute;
+        margin-top: 15.52%;
+        margin-left: 18.25%;
+        z-index: 5;
+    }
+
+    #input-STRESS7 {
+        position: absolute;
+        margin-top: 15.52%;
+        margin-left: 20.65%;
+        z-index: 5;
+    }
+
+    #input-STRESS8 {
+        position: absolute;
+        margin-top: 15.52%;
+        margin-left: 23.05%;
+        z-index: 5;
+    }
+
+    #input-STRESS9 {
+        position: absolute;
+        margin-top: 15.52%;
+        margin-left: 25.5%;
+        z-index: 5;
+    }
+
+    #input-STRESS10 {
+        position: absolute;
+        margin-top: 15.52%;
+        margin-left: 27.9%;
+        z-index: 5;
+    }
+
+    #input-SANTE1 {
+        position: absolute;
+        margin-top: 19.65%;
+        margin-left: 6.15%;
+        z-index: 5;
+    }
+
+    #input-SANTE2 {
+        position: absolute;
+        margin-top: 19.65%;
+        margin-left: 8.55%;
+        z-index: 5;
+    }
+
+    #input-SANTE3 {
+        position: absolute;
+        margin-top: 19.65%;
+        margin-left: 11%;
+        z-index: 5;
+    }
+
+    #input-SANTE4 {
+        position: absolute;
+        margin-top: 19.65%;
+        margin-left: 13.4%;
+        z-index: 5;
+    }
+
+    #input-SANTE5 {
+        position: absolute;
+        margin-top: 19.65%;
+        margin-left: 15.8%;
+        z-index: 5;
+    }
+
+    #input-SANTE6 {
+        position: absolute;
+        margin-top: 19.66%;
+        margin-left: 18.25%;
+        z-index: 5;
+    }
+
+    #input-SANTE7 {
+        position: absolute;
+        margin-top: 19.66%;
+        margin-left: 20.65%;
+        z-index: 5;
+    }
+
+    #input-SANTE8 {
+        position: absolute;
+        margin-top: 19.66%;
+        margin-left: 23.05%;
+        z-index: 5;
+    }
+
+    #input-SANTE9 {
+        position: absolute;
+        margin-top: 19.66%;
+        margin-left: 25.5%;
+        z-index: 5;
+    }
+
+    #input-SANTE10 {
+        position: absolute;
+        margin-top: 19.66%;
+        margin-left: 27.9%;
+        z-index: 5;
+    }
+
+    #input-RADIATION1 {
+        position: absolute;
+        margin-top: 24.35%;
+        margin-left: 6.15%;
+        z-index: 5;
+    }
+
+    #input-RADIATION2 {
+        position: absolute;
+        margin-top: 24.35%;
+        margin-left: 8.55%;
+        z-index: 5;
+    }
+
+    #input-RADIATION3 {
+        position: absolute;
+        margin-top: 24.35%;
+        margin-left: 11%;
+        z-index: 5;
+    }
+
+    #input-RADIATION4 {
+        position: absolute;
+        margin-top: 24.35%;
+        margin-left: 13.4%;
+        z-index: 5;
+    }
+
+    #input-RADIATION5 {
+        position: absolute;
+        margin-top: 24.35%;
+        margin-left: 15.8%;
+        z-index: 5;
+    }
+
+    #input-RADIATION6 {
+        position: absolute;
+        margin-top: 25.9%;
+        margin-left: 6.15%;
+        z-index: 5;
+    }
+
+    #input-RADIATION7 {
+        position: absolute;
+        margin-top: 25.9%;
+        margin-left: 8.55%;
+        z-index: 5;
+    }
+
+    #input-RADIATION8 {
+        position: absolute;
+        margin-top: 25.9%;
+        margin-left: 11%;
+        z-index: 5;
+    }
+
+    #input-RADIATION9 {
+        position: absolute;
+        margin-top: 25.9%;
+        margin-left: 13.4%;
+        z-index: 5;
+    }
+
+    #input-RADIATION10 {
+        position: absolute;
+        margin-top: 25.9%;
+        margin-left: 15.8%;
+        z-index: 5;
+    }
+
+    #input-AFFAME {
+        position: absolute;
+        margin-top: 35.4%;
+        margin-left: 26.6%;
+        z-index: 5;
+    }
+
+    #input-DESHYDRATE {
+        position: absolute;
+        margin-top: 36.75%;
+        margin-left: 26.6%;
+        z-index: 5;
+    }
+
+    #input-EPUISE {
+        position: absolute;
+        margin-top: 38.1%;
+        margin-left: 26.6%;
+        z-index: 5;
+    }
+
+    #input-GELE {
+        position: absolute;
+        margin-top: 39.45%;
+        margin-left: 26.6%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE1 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 70.9%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE2 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 73.3%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE3 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 75.75%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE4 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 78.15%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE5 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 80.58%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE6 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 83%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE7 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 85.4%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE8 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 87.85%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE9 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 90.25%;
+        z-index: 5;
+    }
+
+    #input-EXPERIENCE10 {
+        position: absolute;
+        margin-top: 14.65%;
+        margin-left: 92.7%;
+        z-index: 5;
+    }
+
+    #input-RECIT1 {
+        position: absolute;
+        margin-top: 18.76%;
+        margin-left: 87.85%;
+        z-index: 5;
+    }
+
+    #input-RECIT2 {
+        position: absolute;
+        margin-top: 18.76%;
+        margin-left: 90.25%;
+        z-index: 5;
+    }
+
+    #input-RECIT3 {
+        position: absolute;
+        margin-top: 18.76%;
+        margin-left: 92.7%;
+        z-index: 5;
+    }
+
+    #bouton-retour {
+        position: absolute;
+        z-index: 5;
+        width: 60px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
