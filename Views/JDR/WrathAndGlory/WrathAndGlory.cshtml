@@ -1,4 +1,7 @@
-﻿<button onclick="location.href='@Url.Action("EmployeursListe", "WrathAndGlory")'">Employeurs</button>
+﻿<button class="bouton" onclick="location.href='@Url.Action("EmployeursListe", "WrathAndGlory")'">Employeurs <img src="~/Images/Employeur.png" height="30" width="30" /></button>
+
+<button class="bouton">Système Gilead <img src="~/Images/Systeme_Solaire.png" height="30" width="30" /></button>
+
 
 
 <h1 style="width:fit-content;" class="align-mid">SYSTEME GILEAD</h1>
@@ -49,7 +52,7 @@
 
     <div onclick="location.href='@Url.Action("PersephonesRegret", "WrathAndGlory")'" style="cursor:pointer;width:fit-content;" class="col-2 mx-auto d-block">
         <img src="~/Images/WrathAndGLory/PersephonesRegret.jpg" style="border-radius:15px;" width="200" height="200"  class="mx-auto d-block"/>
-        <label class="align-mid" style="width: fit-content; font-weight: bold; font-size: 25px; ">PERSEPHONE'S REGRET'</label>
+        <label class="align-mid" style="width: fit-content; font-weight: bold; font-size: 25px; ">PERSEPHONE'S REGRET</label>
     </div>
 </div>
 <hr style="color:white;width:60%; height:5px;" class="d-block mx-auto"/>
@@ -91,3 +94,10 @@
 
 
 
+<style>
+    .bouton{
+        border: 1px solid white;
+        background-color: black;
+        color: white;
+    }
+</style>

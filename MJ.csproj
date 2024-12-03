@@ -318,6 +318,7 @@
     <Content Include="CSS\Site.css" />
     <Content Include="Images\Alien\AL-Fiche-de-personnage_page-0001.jpg" />
     <Content Include="Images\Alien\IMG-Fond.png" />
+    <Content Include="Images\Employeur.png" />
     <Content Include="Images\Logo_CH.png" />
     <Content Include="Images\logo WAG.png" />
     <Content Include="Images\Logo-Alien.png" />
@@ -330,6 +331,7 @@
     <Content Include="Images\LOGO.png" />
     <Content Include="Images\Logo-Avatar.png" />
     <Content Include="Images\Logo_TWD.png" />
+    <Content Include="Images\Systeme_Solaire.png" />
     <Content Include="Images\TESTLOGOCH.png" />
     <Content Include="Images\WrathAndGLory\Avachrus.jpg" />
     <Content Include="Images\WrathAndGLory\BourbierDuVide.jpg" />
@@ -476,6 +478,7 @@
     <Content Include="Views\JDR\CthulhuHack\Scénarios\LesTraitsDuVisage.cshtml" />
     <Content Include="Views\JDR\WrathAndGlory\ChampBataille.cshtml" />
     <Content Include="Views\JDR\WrathAndGlory\EmployeursList.cshtml" />
+    <Content Include="Views\JDR\CthulhuHack\Scénarios\LaSororite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\JDR\CthulhuHack\Scénarios\LaLisiere\" />
