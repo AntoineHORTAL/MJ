@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MJ.Models.WrathAndGlory;
 
 namespace MJ.Controllers
 {
@@ -55,6 +56,17 @@ namespace MJ.Controllers
         public ActionResult EmployeursListe()
         {
             return View("~/Views/JDR/WrathAndGlory/EmployeursList.cshtml");
+        }
+
+        public ActionResult Bestiaire()
+        {
+            CreatureService _creatureservice = new CreatureService();
+
+            List<Creature__WAG> listecreature = _creatureservice.GetListeCreature();
+
+            listecreature = listecreature.OrderBy(c => c.Race).ToList();
+
+            return View("~/Views/JDR/WrathAndGlory/Bestiaire.cshtml", listecreature);
         }
     }
 }

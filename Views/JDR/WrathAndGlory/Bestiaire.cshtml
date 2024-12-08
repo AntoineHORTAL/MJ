@@ -1,0 +1,199 @@
+﻿@using MJ.Models.WrathAndGlory;
+@{
+    List<Creature__WAG> listecreature = Model;
+
+    List<string> ListeRace = new List<string>();
+    ListeRace.Add("Chaos");
+    ListeRace.Add("Ork");
+    ListeRace.Add("Necron");
+    ListeRace.Add("Aeldari");
+    ListeRace.Add("Drukhari");
+    ListeRace.Add("Tau");
+    ListeRace.Add("Genstealer");
+    ListeRace.Sort();
+
+    int i = 1;
+}
+
+<div style="display:none;" class="align-mid">
+    <h3 class="align-mid" style="width:fit-content">CULTISTE</h3>
+    <table width="100%">
+        <tr>
+            <th style="text-align:left;width:40%;">Tier</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+        </tr>
+        <tr>
+            <th style="text-align: left; width: 40%;">Menace</th>
+            <th>T</th>
+            <th>T</th>
+            <th>T</th>
+            <th>T</th>
+        </tr>
+    </table>
+    <label style="margin-top:10px;margin-bottom:10px;">MOTS-CLÉ: <strong>CHAOS, HÉRÉTIQUE</strong></label>
+    <table width="100%">
+        <tr>
+            <th width="14%">F</th>
+            <th width="14%">E</th>
+            <th width="14%">A</th>
+            <th width="14%">I</th>
+            <th width="14%">FM</th>
+            <th width="14%">Int</th>
+            <th width="14%">Soc</th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>3</th>
+            <th>2</th>
+            <th>3</th>
+            <th>3</th>
+            <th>2</th>
+            <th>2</th>
+        </tr>
+    </table>
+    <label class="align-mid" style="width:fit-content"><strong>RÉSISTANCES</strong></label>
+    <label class="align-mid" style="width:fit-content">4 (vêtements déchirés: 0 Ar)</label>
+    <table width="100%">
+        <tr>
+            <th width="33%">Défense</th>
+            <th width="33%">Blessures</th>
+            <th width="33%">Stress</th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>5</th>
+            <th>4</th>
+        </tr>
+    </table>
+    <label>COMPÉTENCES</label>
+    <label>Par défaut 3, Capacité de Combat 5, Duperie 5, Furtivité 5, Vigilance 4 (Passive 2)</label>
+    <label>BONUS</label>
+    <label>DÉVOTION: chaque fois qu'un cultiste est tué par un coup critique, le MJ gaggne 1 point de RUINE</label>
+    <label>APTITUDES</label>
+    <label>ACTION: Combat à deux armes</label>
+    <label>Un cultiste ne subit aucune pénalité d'Action multiple lors d'un tour où il choisit de tirer avec son Pistolet-mitrailleur et de poingnarder avec un Couteau.</label>
+    <label>Pistolet-mitrailleur</label>
+    <label>7+1 DPS / Portée 6-12-18 / Rafale 2 / Pistolet</label>
+    <label>Couteau</label>
+    <label>4+2 DPS / Portée 1</label>
+    <label>DÉTERMINATION</label>
+    <label>dépensez 1 point de RUINE pour lancer 3D6</label>
+    <table width="100%" style="margin-bottom:10px;">
+        <tr>
+            <th width="25%">Conviction</th>
+            <th width="25%">Résolution</th>
+            <th width="25%">Vitesse</th>
+            <th width="25%">Taille</th>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>2</th>
+            <th>6</th>
+            <th>M</th>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript" src="~/Scripts/bootstrap.min.js" />
+<script type="text/javascript">
+    function SelectCreature(Id) {
+        console.log(document.getElementById("SelectedCreature_" + Id).checked);
+        if (document.getElementById("SelectedCreature_" + Id).checked === true) {
+            document.getElementById("Creature_" + Id).style.backgroundColor = "black";
+            document.getElementById("SelectedCreature_" + Id).checked = false;
+        }
+        else if (document.getElementById("SelectedCreature_" + Id).checked === false) {
+            document.getElementById("Creature_" + Id).style.backgroundColor = "red";
+            document.getElementById("SelectedCreature_" + Id).checked = true;
+        }
+    }
+</script>
+
+@foreach (string race in ListeRace)
+{
+    <h2 style="text-align:center;font-size:45px;margin-bottom:50px;margin-top:50px;">@race.ToUpper()</h2>
+    <div class="row col-10" style="margin-left:auto;margin-right:auto;">
+        @foreach (Creature__WAG creature in listecreature.Where(c => c.Race == race))
+        {
+            <div class="col-2 align-mid carte" id="Creature_@creature.ID" onclick="SelectCreature(@creature.ID)">
+                <input id="SelectedCreature_@creature.ID" value="false" type="checkbox" style="display:none;" />
+                <img src="@creature.CheminImage" width="95%" height="95%" class="align-mid" />
+                <div class="cartetexte">
+                    <label style="background-color:#b83333;width:100%;text-align:center;font-size:large;">@creature.Nom</label>
+                    <table width="95%" style="margin-bottom:20px;margin-left:15px;margin-right:0px;">
+                        <tr>
+                            <th style="text-align:left;width:40%;">Tier</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">1</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">2</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">3</th>
+                            <th style="border-left: 1px solid white;">4</th>
+                        </tr>
+                        <tr>
+                            <th style="text-align: left; width: 40%;">Menace</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.MenaceT1</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.MenaceT2</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.MenaceT3</th>
+                            <th style="border-left: 1px solid white;">@creature.MenaceT4</th>
+                        </tr>
+                    </table>
+                    <table width="100%">
+                        <tr>
+                            <th width="14%">F</th>
+                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">E</th>
+                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">A</th>
+                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">I</th>
+                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">FM</th>
+                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">Int</th>
+                            <th width="14%" style="border-left: 1px solid white;">Soc</th>
+                        </tr>
+                        <tr>
+                            <th>@creature.Force</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Endurance</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Agilite</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Intelligence</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.ForceMentale</th>
+                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Initiative</th>
+                            <th style="border-left: 1px solid white;">@creature.Sociabilite</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+
+<style>
+    th {
+        text-align: center;
+    }
+
+    .carte {
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        margin-bottom: 40px;
+    }
+
+    .cartetexte {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        color: white;
+        text-align: center;
+        transition: transform 0.3s;
+        background: linear-gradient(0deg, rgba(0, 0, 0, .5) 100%, rgba(255, 255, 255, 0) 100%);
+        transform: translateY(100%);
+    }
+
+    .carte:hover .cartetexte {
+        transform: translateY(0);
+    }
+
+    /*aussi possible de le faire avec une animation de carte qui se retourne https://codepen.io/corvcode/pen/oVdZQw */
+</style>

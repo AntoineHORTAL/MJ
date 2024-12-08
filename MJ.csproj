@@ -263,6 +263,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BLL\BLL_Alien.cs" />
     <Compile Include="BLL\BLL_Avatar.cs" />
+    <Compile Include="BLL\BLL_WrathAndGlory.cs" />
     <Compile Include="Controllers\AlienController.cs" />
     <Compile Include="Controllers\AvatarController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -272,6 +273,7 @@
     <Compile Include="Controllers\WrathAndGloryController.cs" />
     <Compile Include="DAL\DAL_Alien.cs" />
     <Compile Include="DAL\DAL_Avatar.cs" />
+    <Compile Include="DAL\DAL_WrathAndGLory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -279,6 +281,10 @@
     <Compile Include="Models\PersonnageAlien.cs" />
     <Compile Include="Models\PersonnageAvatar.cs" />
     <Compile Include="Models\Plannète.cs" />
+    <Compile Include="Models\WrathAndGlory\Competence.cs" />
+    <Compile Include="Models\WrathAndGlory\CreatureService.cs" />
+    <Compile Include="Models\WrathAndGlory\Creature__WAG.cs" />
+    <Compile Include="Models\WrathAndGlory\MotCle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -318,6 +324,7 @@
     <Content Include="CSS\Site.css" />
     <Content Include="Images\Alien\AL-Fiche-de-personnage_page-0001.jpg" />
     <Content Include="Images\Alien\IMG-Fond.png" />
+    <Content Include="Images\Bestiaire.png" />
     <Content Include="Images\Employeur.png" />
     <Content Include="Images\Logo_CH.png" />
     <Content Include="Images\logo WAG.png" />
@@ -334,6 +341,43 @@
     <Content Include="Images\Systeme_Solaire.png" />
     <Content Include="Images\TESTLOGOCH.png" />
     <Content Include="Images\WrathAndGLory\Avachrus.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Drukhari\Archon.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\AvatarOfKhaine.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\FireDragon.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Ork\Bizarboy.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Ork\Boy.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Chaos\Cultiste.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Chaos\HorreurRose.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Chaos\PsykerRenegat.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Chaos\Sanguinaire.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Necron\Overlord.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Necron\SoldatNecron.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Ork\Warboss.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\Ranger.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\SwoopingHawk.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Necron\Technomancer.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Necron\TriarchPraetorian.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Chaos\Veroleux.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Ork\Stormboy.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\StormGuardian.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\StrikingScorpion.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Drukhari\Succubus.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Drukhari\Talos.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Ork\Tankbusta.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Tau\VespidStingwing.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Tau\VespidStrainLeader.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\VoidReaver.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\Warlock.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\WarpSpider.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\WaySeeker.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Drukhari\Wrack.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\Wraithblade.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\Wraithguard.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\Wraithlord.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Drukhari\Wych.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Tau\XV25StealthBattlesuitShas%27ui.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Tau\XV8CrisisBattlesuit.jpg" />
+    <Content Include="Images\WrathAndGLory\Bestiaire\Tau\XV95GhostkeelBattlesuitShas%27vre.jpg" />
     <Content Include="Images\WrathAndGLory\BourbierDuVide.jpg" />
     <Content Include="Images\WrathAndGLory\Charibdion.jpg" />
     <Content Include="Images\WrathAndGLory\Employeurs\Akahir.jpg" />
@@ -479,6 +523,7 @@
     <Content Include="Views\JDR\WrathAndGlory\ChampBataille.cshtml" />
     <Content Include="Views\JDR\WrathAndGlory\EmployeursList.cshtml" />
     <Content Include="Views\JDR\CthulhuHack\Scénarios\LaSororite.cshtml" />
+    <Content Include="Views\JDR\WrathAndGlory\Bestiaire.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\JDR\CthulhuHack\Scénarios\LaLisiere\" />
