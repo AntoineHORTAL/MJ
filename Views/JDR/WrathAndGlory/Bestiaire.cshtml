@@ -15,89 +15,6 @@
     int i = 1;
 }
 
-<div style="display:none;" class="align-mid">
-    <h3 class="align-mid" style="width:fit-content">CULTISTE</h3>
-    <table width="100%">
-        <tr>
-            <th style="text-align:left;width:40%;">Tier</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-        </tr>
-        <tr>
-            <th style="text-align: left; width: 40%;">Menace</th>
-            <th>T</th>
-            <th>T</th>
-            <th>T</th>
-            <th>T</th>
-        </tr>
-    </table>
-    <label style="margin-top:10px;margin-bottom:10px;">MOTS-CLÉ: <strong>CHAOS, HÉRÉTIQUE</strong></label>
-    <table width="100%">
-        <tr>
-            <th width="14%">F</th>
-            <th width="14%">E</th>
-            <th width="14%">A</th>
-            <th width="14%">I</th>
-            <th width="14%">FM</th>
-            <th width="14%">Int</th>
-            <th width="14%">Soc</th>
-        </tr>
-        <tr>
-            <th>2</th>
-            <th>3</th>
-            <th>2</th>
-            <th>3</th>
-            <th>3</th>
-            <th>2</th>
-            <th>2</th>
-        </tr>
-    </table>
-    <label class="align-mid" style="width:fit-content"><strong>RÉSISTANCES</strong></label>
-    <label class="align-mid" style="width:fit-content">4 (vêtements déchirés: 0 Ar)</label>
-    <table width="100%">
-        <tr>
-            <th width="33%">Défense</th>
-            <th width="33%">Blessures</th>
-            <th width="33%">Stress</th>
-        </tr>
-        <tr>
-            <th>2</th>
-            <th>5</th>
-            <th>4</th>
-        </tr>
-    </table>
-    <label>COMPÉTENCES</label>
-    <label>Par défaut 3, Capacité de Combat 5, Duperie 5, Furtivité 5, Vigilance 4 (Passive 2)</label>
-    <label>BONUS</label>
-    <label>DÉVOTION: chaque fois qu'un cultiste est tué par un coup critique, le MJ gaggne 1 point de RUINE</label>
-    <label>APTITUDES</label>
-    <label>ACTION: Combat à deux armes</label>
-    <label>Un cultiste ne subit aucune pénalité d'Action multiple lors d'un tour où il choisit de tirer avec son Pistolet-mitrailleur et de poingnarder avec un Couteau.</label>
-    <label>Pistolet-mitrailleur</label>
-    <label>7+1 DPS / Portée 6-12-18 / Rafale 2 / Pistolet</label>
-    <label>Couteau</label>
-    <label>4+2 DPS / Portée 1</label>
-    <label>DÉTERMINATION</label>
-    <label>dépensez 1 point de RUINE pour lancer 3D6</label>
-    <table width="100%" style="margin-bottom:10px;">
-        <tr>
-            <th width="25%">Conviction</th>
-            <th width="25%">Résolution</th>
-            <th width="25%">Vitesse</th>
-            <th width="25%">Taille</th>
-        </tr>
-        <tr>
-            <th>3</th>
-            <th>2</th>
-            <th>6</th>
-            <th>M</th>
-        </tr>
-    </table>
-</div>
-
-<script type="text/javascript" src="~/Scripts/bootstrap.min.js" />
 <script type="text/javascript">
     function SelectCreature(Id) {
         console.log(document.getElementById("SelectedCreature_" + Id).checked);
@@ -111,6 +28,10 @@
         }
     }
 </script>
+
+<div style="width:100%;">
+    <button class="bouton align-mid">Afficher la liste des créatures sélectionnées</button>
+</div>
 
 @foreach (string race in ListeRace)
 {

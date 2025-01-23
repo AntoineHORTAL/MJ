@@ -10,6 +10,10 @@ namespace MJ.Controllers
     public class WrathAndGloryController : Controller
     {
         #region Système Gilead
+        public ActionResult SystemGilead()
+        {
+            return View("~/Views/JDR/WrathAndGlory/SystemeGilead.cshtml");
+        }
         public ActionResult Avachrus()
         {
             return View("~/Views/JDR/WrathAndGlory/Systeme_Gilead/Avachrus.cshtml");
@@ -52,6 +56,64 @@ namespace MJ.Controllers
         }
         #endregion
 
+        #region Employeurs
+
+        public ActionResult Akahir()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/Akahir.cshtml");
+        }
+
+        public ActionResult Vakuul()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/AxekraVakuul.cshtml");
+        }
+        public ActionResult Lorae()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/EshgarQuintusLorae.cshtml");
+        }
+        public ActionResult Varonius()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/JakelVaronius.cshtml");
+        }
+        public ActionResult GraceDEmysa()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/JeanneGraceDEmysa.cshtml");
+        }
+        public ActionResult Clade()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/MerramarClade.cshtml");
+        }
+        public ActionResult Mincara()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/OctaviaMincara.cshtml");
+        }
+        public ActionResult Fylamon()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/TaleriaFylamon.cshtml");
+        }
+        public ActionResult Dikaisune()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/TytronaDikaisune.cshtml");
+        }
+        public ActionResult Taranlys()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/LanrielTaranlys.cshtml");
+        }
+        public ActionResult PrincesseDEmeraude()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/LaPrincesseDEmeraude.cshtml");
+        }
+        public ActionResult Smasha()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/VazdrokSpikeySmasha.cshtml");
+        }
+        public ActionResult Maloquence()
+        {
+            return View("~/Views/JDR/WrathAndGlory/Employeurs/Maloquence.cshtml");
+        }
+
+        #endregion
+
 
         public ActionResult EmployeursListe()
         {
@@ -67,6 +129,11 @@ namespace MJ.Controllers
             listecreature = listecreature.OrderBy(c => c.Race).ToList();
 
             return View("~/Views/JDR/WrathAndGlory/Bestiaire.cshtml", listecreature);
+        }
+
+        public ActionResult AideMJ()
+        {
+            return View("~/Views/JDR/WrathAndGlory/AideMJ.cshtml");
         }
     }
 }

@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC</SSDTPath>
@@ -19,7 +20,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MJ</RootNamespace>
     <AssemblyName>MJ</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -340,6 +341,7 @@
     <Content Include="Images\Logo_TWD.png" />
     <Content Include="Images\Systeme_Solaire.png" />
     <Content Include="Images\TESTLOGOCH.png" />
+    <Content Include="Images\WrathAndGLory\FondBestiaire.jpg" />
     <Content Include="Images\WrathAndGLory\Avachrus.jpg" />
     <Content Include="Images\WrathAndGLory\Bestiaire\Drukhari\Archon.jpg" />
     <Content Include="Images\WrathAndGLory\Bestiaire\Aeldari\AvatarOfKhaine.jpg" />
@@ -380,6 +382,7 @@
     <Content Include="Images\WrathAndGLory\Bestiaire\Tau\XV95GhostkeelBattlesuitShas%27vre.jpg" />
     <Content Include="Images\WrathAndGLory\BourbierDuVide.jpg" />
     <Content Include="Images\WrathAndGLory\Charibdion.jpg" />
+    <Content Include="Images\WrathAndGLory\FondEmployeurs.jpg" />
     <Content Include="Images\WrathAndGLory\Employeurs\Akahir.jpg" />
     <Content Include="Images\WrathAndGLory\Employeurs\AxekraVakuul.jpg" />
     <Content Include="Images\WrathAndGLory\Employeurs\EshgarQuintusLorae.jpg" />
@@ -398,6 +401,8 @@
     <Content Include="Images\WrathAndGLory\Nethreus.jpg" />
     <Content Include="Images\WrathAndGLory\Ostia.jpg" />
     <Content Include="Images\WrathAndGLory\PersephonesRegret.jpg" />
+    <Content Include="Images\WrathAndGLory\FondSystemeGilead.jpg" />
+    <Content Include="Images\WrathAndGLory\FondAideMJ.jpeg" />
     <Content Include="Images\WrathAndGLory\Trollius.jpg" />
     <Content Include="Images\WrathAndGLory\Vulkaris.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -524,6 +529,7 @@
     <Content Include="Views\JDR\WrathAndGlory\EmployeursList.cshtml" />
     <Content Include="Views\JDR\CthulhuHack\Scénarios\LaSororite.cshtml" />
     <Content Include="Views\JDR\WrathAndGlory\Bestiaire.cshtml" />
+    <Content Include="Views\JDR\Star Wars Edge\AuConfinDeLEmpire\AideMJ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\JDR\CthulhuHack\Scénarios\LaLisiere\" />
