@@ -284,8 +284,9 @@
     <Compile Include="Models\Plannète.cs" />
     <Compile Include="Models\WrathAndGlory\Competence.cs" />
     <Compile Include="Models\WrathAndGlory\CreatureService.cs" />
-    <Compile Include="Models\WrathAndGlory\Creature__WAG.cs" />
+    <Compile Include="Models\WrathAndGlory\Creature_WAG.cs" />
     <Compile Include="Models\WrathAndGlory\MotCle.cs" />
+    <Compile Include="Models\WrathAndGlory\MotCleService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -530,6 +531,7 @@
     <Content Include="Views\JDR\CthulhuHack\Scénarios\LaSororite.cshtml" />
     <Content Include="Views\JDR\WrathAndGlory\Bestiaire.cshtml" />
     <Content Include="Views\JDR\Star Wars Edge\AuConfinDeLEmpire\AideMJ.cshtml" />
+    <Content Include="Views\JDR\WrathAndGlory\AffichageListeCreature.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\JDR\CthulhuHack\Scénarios\LaLisiere\" />

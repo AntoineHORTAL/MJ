@@ -1,0 +1,51 @@
+﻿@using MJ.Models.WrathAndGlory;
+@{
+    List<Creature_WAG> ListeCreatureSelected = Model;
+}
+
+@foreach (Creature_WAG Creature in ListeCreatureSelected)
+{
+    <div class="col-2 align-mid carte" name="Creature_@Creature.ID" id="@Creature.ID" onclick="SelectCreature(@Creature.ID)">
+        <input id="SelectedCreature_@Creature.ID" value="false" type="checkbox" style="display:none;" />
+        <img src="@Creature.CheminImage" width="95%" height="95%" class="align-mid" />
+        <div class="cartetexte">
+            <label style="background-color:#b83333;width:100%;text-align:center;font-size:large;">@Creature.Nom</label>
+            <table width="95%" style="margin-bottom:20px;margin-left:15px;margin-right:0px;">
+                <tr>
+                    <th style="text-align:left;width:40%;">Tier</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">1</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">2</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">3</th>
+                    <th style="border-left: 1px solid white;">4</th>
+                </tr>
+                <tr>
+                    <th style="text-align: left; width: 40%;">Menace</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">@Creature.MenaceT1</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">@Creature.MenaceT2</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">@Creature.MenaceT3</th>
+                    <th style="border-left: 1px solid white;">@Creature.MenaceT4</th>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <th width="14%">F</th>
+                    <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">E</th>
+                    <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">A</th>
+                    <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">I</th>
+                    <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">FM</th>
+                    <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">Int</th>
+                    <th width="14%" style="border-left: 1px solid white;">Soc</th>
+                </tr>
+                <tr>
+                    <th>@Creature.Force</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">@Creature.Endurance</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">@Creature.Agilite</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">@Creature.Intelligence</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">@Creature.ForceMentale</th>
+                    <th style="border-left: 1px solid white; border-right: 1px solid white;">@Creature.Initiative</th>
+                    <th style="border-left: 1px solid white;">@Creature.Sociabilite</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+}

@@ -1,6 +1,6 @@
 ﻿@using MJ.Models.WrathAndGlory;
 @{
-    List<Creature__WAG> listecreature = Model;
+    List<Creature_WAG> listecreature = Model;
 
     List<string> ListeRace = new List<string>();
     ListeRace.Add("Chaos");
@@ -12,82 +12,206 @@
     ListeRace.Add("Genstealer");
     ListeRace.Sort();
 
-    int i = 1;
+    var creaturetest = new Creature_WAG(38, "Stormboy", "https://localhost:44385/Images/WrathAndGLory/Bestiaire/Ork/Stormboy.jpg", 'E', 'E', 'T', 'T', 4, 6, 3, 3, 2, 1, 3, "Ork", "38");
+    var motcle = new MotCle(38, "Ork", "Une espèce xenos brutale qui a toujours soif de violence et ne vite que pour la guerre.");
 }
 
 <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        const button = document.getElementById('popoverButton');
+        const popover = document.getElementById('popover');
+
+        button.addEventListener('mouseenter', function () {
+            popover.classList.add('show');
+        });
+
+        button.addEventListener('mouseleave', function () {
+            popover.classList.remove('show');
+        });
+    });
+
+
+
+
     function SelectCreature(Id) {
-        console.log(document.getElementById("SelectedCreature_" + Id).checked);
         if (document.getElementById("SelectedCreature_" + Id).checked === true) {
-            document.getElementById("Creature_" + Id).style.backgroundColor = "black";
+            document.getElementById(Id).style.backgroundColor = "black";
             document.getElementById("SelectedCreature_" + Id).checked = false;
+            document.getElementById(Id).classList.remove("CreatureSelected");
         }
         else if (document.getElementById("SelectedCreature_" + Id).checked === false) {
-            document.getElementById("Creature_" + Id).style.backgroundColor = "red";
+            document.getElementById(Id).style.backgroundColor = "red";
             document.getElementById("SelectedCreature_" + Id).checked = true;
+            document.getElementById(Id).classList.add("CreatureSelected");
         }
+    }
+
+    function ShowSelectedCreatureList() {
+        const SelectedCreatures = document.querySelectorAll('div.CreatureSelected');
+
+        const ids = [];
+
+        SelectedCreatures.forEach(Crea => {
+            if (Crea.id) {
+                ids.push(parseInt(Crea.id));
+            }
+        });
+
+        $.ajax({
+            type: 'POST',
+            url: '/WrathAndGlory/AfficherListeCreature',
+            data: JSON.stringify(ids),
+            contentType: 'application/json; charset=utf-8',
+            success: function (res) {
+                $("#DivAffichageCreatureSelectionnee").html(res);
+                $("#DivBestiaire").css("display", "none");
+            },
+            error: function (res) {
+                console.log(res.responseText);
+            }
+        });
     }
 </script>
 
-<div style="width:100%;">
-    <button class="bouton align-mid">Afficher la liste des créatures sélectionnées</button>
+
+@*<div style="position: relative;width:fit-content;">
+    <div id="popover" class="popover">
+        <p>Ceci est un popover simple.</p>
+    </div>
+    <button id="popoverButton">Passez la souris ici !</button>
+</div>*@
+
+
+<div style="width:100%;padding:30px;" class="row">
+    <div class="col-1">
+        <img src="@creaturetest.CheminImage" height="300" />
+    </div>
+    <div class="col-11">
+        <table style="height:100%;">
+            <tr>
+                <td class="tdTM">Tier</td>
+                <td class="tdTM">Menace</td>
+            </tr>
+            <tr>
+                <td class="tdTM">1</td>
+                <td class="tdTM">@creaturetest.MenaceT1</td>
+            </tr>
+            <tr>
+                <td class="tdTM">2</td>
+                <td class="tdTM">@creaturetest.MenaceT2</td>
+            </tr>
+            <tr>
+                <td class="tdTM">3</td>
+                <td class="tdTM">@creaturetest.MenaceT3</td>
+            </tr>
+            <tr>
+                <td class="tdTM">4</td>
+                <td class="tdTM">@creaturetest.MenaceT4</td>
+            </tr>
+        </table>
+        @*<div>@if (creaturetest.MotsCle != null) { foreach (MotCle MC in creaturetest.MotsCle) {<label>@MC.Nom</label>} }</div>*@
+        <div style="position: relative;width:fit-content;">
+            <div id="popover" class="popover">
+                <p>@motcle.Description</p>
+            </div>
+            <button id="popoverButton">@motcle.Nom</button>
+        </div>
+    </div>
 </div>
 
-@foreach (string race in ListeRace)
-{
-    <h2 style="text-align:center;font-size:45px;margin-bottom:50px;margin-top:50px;">@race.ToUpper()</h2>
-    <div class="row col-10" style="margin-left:auto;margin-right:auto;">
-        @foreach (Creature__WAG creature in listecreature.Where(c => c.Race == race))
-        {
-            <div class="col-2 align-mid carte" id="Creature_@creature.ID" onclick="SelectCreature(@creature.ID)">
-                <input id="SelectedCreature_@creature.ID" value="false" type="checkbox" style="display:none;" />
-                <img src="@creature.CheminImage" width="95%" height="95%" class="align-mid" />
-                <div class="cartetexte">
-                    <label style="background-color:#b83333;width:100%;text-align:center;font-size:large;">@creature.Nom</label>
-                    <table width="95%" style="margin-bottom:20px;margin-left:15px;margin-right:0px;">
-                        <tr>
-                            <th style="text-align:left;width:40%;">Tier</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">1</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">2</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">3</th>
-                            <th style="border-left: 1px solid white;">4</th>
-                        </tr>
-                        <tr>
-                            <th style="text-align: left; width: 40%;">Menace</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.MenaceT1</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.MenaceT2</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.MenaceT3</th>
-                            <th style="border-left: 1px solid white;">@creature.MenaceT4</th>
-                        </tr>
-                    </table>
-                    <table width="100%">
-                        <tr>
-                            <th width="14%">F</th>
-                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">E</th>
-                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">A</th>
-                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">I</th>
-                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">FM</th>
-                            <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">Int</th>
-                            <th width="14%" style="border-left: 1px solid white;">Soc</th>
-                        </tr>
-                        <tr>
-                            <th>@creature.Force</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Endurance</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Agilite</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Intelligence</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.ForceMentale</th>
-                            <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Initiative</th>
-                            <th style="border-left: 1px solid white;">@creature.Sociabilite</th>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        }
+
+<div id="DivBestiaire">
+    <div style="width:100%;">
+        <button class="bouton align-mid" onclick="ShowSelectedCreatureList()">Afficher la liste des créatures sélectionnées</button>
     </div>
-}
+
+    @foreach (string race in ListeRace)
+    {
+        <h2 style="text-align:center;font-size:45px;margin-bottom:50px;margin-top:50px;">@race.ToUpper()</h2>
+        <div class="row col-10" style="margin-left:auto;margin-right:auto;">
+            @foreach (Creature_WAG creature in listecreature.Where(c => c.Race == race))
+            {
+                <div class="col-2 align-mid carte" name="Creature_@creature.ID" id="@creature.ID" onclick="SelectCreature(@creature.ID)">
+                    <input id="SelectedCreature_@creature.ID" value="false" type="checkbox" style="display:none;" />
+                    <img src="@creature.CheminImage" width="95%" height="95%" class="align-mid" />
+                    <div class="cartetexte">
+                        <label style="background-color:#b83333;width:100%;text-align:center;font-size:large;">@creature.Nom</label>
+                        <table width="95%" style="margin-bottom:20px;margin-left:15px;margin-right:0px;">
+                            <tr>
+                                <th style="text-align:left;width:40%;">Tier</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">1</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">2</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">3</th>
+                                <th style="border-left: 1px solid white;">4</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: left; width: 40%;">Menace</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.MenaceT1</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.MenaceT2</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.MenaceT3</th>
+                                <th style="border-left: 1px solid white;">@creature.MenaceT4</th>
+                            </tr>
+                        </table>
+                        <table width="100%">
+                            <tr>
+                                <th width="14%">F</th>
+                                <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">E</th>
+                                <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">A</th>
+                                <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">I</th>
+                                <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">FM</th>
+                                <th width="14%" style="border-left: 1px solid white; border-right: 1px solid white;">Int</th>
+                                <th width="14%" style="border-left: 1px solid white;">Soc</th>
+                            </tr>
+                            <tr>
+                                <th>@creature.Force</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Endurance</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Agilite</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Intelligence</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.ForceMentale</th>
+                                <th style="border-left: 1px solid white; border-right: 1px solid white;">@creature.Initiative</th>
+                                <th style="border-left: 1px solid white;">@creature.Sociabilite</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<div id="DivAffichageCreatureSelectionnee"></div>
 
 
 <style>
+    .popover {
+        text-align:center;
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        color: black;
+        max-width: 400px;
+        min-width: 200px;
+    }
+
+        .popover.show {
+            display: block;
+        }
+
+
+
+
+    .tdTM {
+        width: 70px !important;
+        text-align: center;
+    }
+
     th {
         text-align: center;
     }

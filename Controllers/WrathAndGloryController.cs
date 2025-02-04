@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using MJ.Models.WrathAndGlory;
 
 namespace MJ.Controllers
 {
     public class WrathAndGloryController : Controller
     {
+        CreatureService _creatureservice = new CreatureService();
+
         #region Système Gilead
         public ActionResult SystemGilead()
         {
@@ -122,9 +125,7 @@ namespace MJ.Controllers
 
         public ActionResult Bestiaire()
         {
-            CreatureService _creatureservice = new CreatureService();
-
-            List<Creature__WAG> listecreature = _creatureservice.GetListeCreature();
+            List<Creature_WAG> listecreature = _creatureservice.GetListeCreature();
 
             listecreature = listecreature.OrderBy(c => c.Race).ToList();
 
@@ -134,6 +135,16 @@ namespace MJ.Controllers
         public ActionResult AideMJ()
         {
             return View("~/Views/JDR/WrathAndGlory/AideMJ.cshtml");
+        }
+
+        [HttpPost]
+        public ActionResult AfficherListeCreature(List<int> pIds)
+        {   
+            List<Creature_WAG> listeCreature = _creatureservice.GetListeCreature();
+
+            List<Creature_WAG> listeCreatureSelected = listeCreature.Where(c => pIds.Contains(c.ID)).ToList();
+
+            return PartialView("~/Views/JDR/WrathAndGlory/AffichageListeCreature.cshtml", listeCreatureSelected);
         }
     }
 }

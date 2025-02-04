@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MJ.Models.WrathAndGlory
 {
-    public class Creature__WAG
+    public class Creature_WAG
     {
         public int ID { get; set; }
         public string Nom { get; set; }
@@ -25,6 +25,7 @@ namespace MJ.Models.WrathAndGlory
         public int Vitesse { get; set; }
         public string Race { get; set; }
         public List<MotCle> MotsCle { get; set; }
+        public string ListeMotCle { get; set; }
         public string Resistance { get; set; }
         public int Defense { get; set; }
         public int Blessures { get; set; }
@@ -36,7 +37,7 @@ namespace MJ.Models.WrathAndGlory
         public int Resolution { get; set; }
         public char Taille { get; set; }
 
-        public Creature__WAG(int ID, string Nom, string CheminImage, char MenaceT1, char MenaceT2, char MenaceT3, char MenaceT4, int Force, int Endurence, int Agilite, int Initiative, int ForceMentale, int Intelligence, int Sociabilite, string Race)
+        public Creature_WAG(int ID, string Nom, string CheminImage, char MenaceT1, char MenaceT2, char MenaceT3, char MenaceT4, int Force, int Endurence, int Agilite, int Initiative, int ForceMentale, int Intelligence, int Sociabilite, string Race, string ListeMotCle)
         {
             this.ID = ID;
             this.Nom = Nom;
@@ -53,6 +54,7 @@ namespace MJ.Models.WrathAndGlory
             this.Intelligence = Intelligence;
             this.Sociabilite = Sociabilite;
             this.Race = Race;
+            this.ListeMotCle = ListeMotCle;
         }
     }
 
