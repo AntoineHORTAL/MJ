@@ -13,25 +13,65 @@
     ListeRace.Sort();
 
     var creaturetest = new Creature_WAG(38, "Stormboy", "https://localhost:44385/Images/WrathAndGLory/Bestiaire/Ork/Stormboy.jpg", 'E', 'E', 'T', 'T', 4, 6, 3, 3, 2, 1, 3, "Ork", "38");
-    var motcle = new MotCle(38, "Ork", "Une espèce xenos brutale qui a toujours soif de violence et ne vite que pour la guerre.");
+    creaturetest.MotsCle = new List<MotCle>();
+    creaturetest.MotsCle.Add(new MotCle(38, "Ork", "Une espèce xenos brutale qui a toujours soif de violence et ne vite que pour la guerre."));
+    creaturetest.Defense = 2;
+    creaturetest.Blessures = 6;
+    creaturetest.Stress = 2;
+    creaturetest.Resistance = "5 (Vêtements déchirés: 0 Ar)";
+    creaturetest.Conviction = 1;
+    creaturetest.Resolution = 1;
+    creaturetest.Vitesse = 6;
+    creaturetest.Taille = 'M';
+    creaturetest.ListeCompetences = new List<Competence>();
+    creaturetest.ListeCompetences.Add(new Competence(99, "Par Défaut", "Correspond à toutes les compétences non nomées.", 5));
+    creaturetest.ListeCompetences.Add(new Competence(2, "Capacité de Combat", "Cette compétence représente votre habilité au combat rapproché, que ce soit avec une arme ou à mains nues. Cela comprend l'identification, la connaissance et l'entretien des armes de mêlée.\nSi vous essayer de toucher quelqu'un, la Défense de votre cible détermine le SD de votre test. La complexité et la rareté d'une arme de mêlée détermine le SD pour la préparation, l'identfication et l'entretien d'une arme.", 7));
+    creaturetest.ListeCompetences.Add(new Competence(3, "Capacité de Tir", "Cette compétence représente votre habilieté à utiliser les armes à feu et autre armes à distance. Cela comprend l'identification, la connaissance et l'entretien de ces armes.\nSi votre personnage tir sur quelqu'un, la Défense de sa sible détermine le SD du test. La compexité de la rareté d'une arme à distance peuvent détermir le SD pour la réparer, l'identifier et l'entretien de cette arme.", 4));
+    creaturetest.ListeCompetences.Add(new Competence(18, "Vigilance", "Cette compétence représente votre capacité à observer des détails et des altérations de l'environnement, ainsi qu'à trouver des choses cachées.\nLa difficulté des tests est déterminée par la difficulté à remarquer quelque chose. Si vous essayer de repérer une personne qui se cache, le SD du test est basé sur son score de Furtivité.", 4));
+    creaturetest.ListeCompetences.Add(new Competence(98, "Passive", "Correspond à la Vigilance Passive d'un personnage", 2));
+    creaturetest.Bonus = "ON Y VA! Si cette Menace est Engagé au début de son Tour, elle gagne +2 dégâts aux attaques de mêlée.";
+    creaturetest.Aptitudes = new List<Aptitude>();
+    creaturetest.Aptitudes.Add(new Aptitude(1, "CRI DE GUERRE", "Arrosez-les! \nUn Boy Ork Charge l'ennemi le plus proche en tirant sauvagement avec son Kalibr'. Faites un test de Capacité de Tir contre la Defense de la cible dans le cadre de la Charge; s'il touche, il n'inflige pas de dégâts, mais tous les ennemis à moins de 30m du Boy Ork doivent faire un est de Peur SD 3."));
+    creaturetest.Aptitudes.Add(new Aptitude(2, "ACTION", "Kalibr': 10 + 1 DS / Portée 6 - 12 - 18 / Rafale 1 / Pistolet, Waaagh!\nKikoup': 7 + 3 DS / Portée 1 / Fiable, Waaagh!\nFrag à manche (2): 9 + 5 DS / Portée 16 / Explosion (6)"));
+    creaturetest.Aptitudes.Add(new Aptitude(3, "DETERMINATION", "Dépensez 1 Ruine pour lancer 4d6"));
 }
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
-        const button = document.getElementById('popoverButton');
-        const popover = document.getElementById('popover');
+        const buttons = document.querySelectorAll('.bouton_popover');
 
-        button.addEventListener('mouseenter', function () {
-            popover.classList.add('show');
+        buttons.forEach(button => {
+            const popoverId = button.getAttribute('data-popover-id');
+            const popover = document.querySelector(`.popover[data-popover-id="${popoverId}"]`);
+
+            button.addEventListener('mouseenter', function () {
+                popover.classList.add('show');
+            });
+
+            button.addEventListener('mouseleave', function () {
+                popover.classList.remove('show');
+            });
         });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.bouton_popover');
 
-        button.addEventListener('mouseleave', function () {
-            popover.classList.remove('show');
+        buttons.forEach(button => {
+            const popoverId = button.getAttribute('data-popover-id');
+            const popover = document.querySelector(`.popoverv2[data-popover-id="${popoverId}"]`);
+
+            button.addEventListener('mouseenter', function () {
+                popover.classList.add('show');
+            });
+
+            button.addEventListener('mouseleave', function () {
+                popover.classList.remove('show');
+            });
         });
     });
 
 
-
+        
 
     function SelectCreature(Id) {
         if (document.getElementById("SelectedCreature_" + Id).checked === true) {
@@ -74,12 +114,14 @@
 </script>
 
 
-@*<div style="position: relative;width:fit-content;">
-    <div id="popover" class="popover">
-        <p>Ceci est un popover simple.</p>
+@*<div style="position: relative; width: fit-content;">
+    <div class="popover" data-popover-id="1">
+        <p>@motcle.Description</p>
     </div>
-    <button id="popoverButton">Passez la souris ici !</button>
+    <button class="popover-button" data-popover-id="1">@motcle.Nom</button>
 </div>*@
+
+@*https://codepen.io/Malgus__/pen/RNbzYGa*@
 
 
 <div style="width:100%;padding:30px;" class="row">
@@ -87,34 +129,130 @@
         <img src="@creaturetest.CheminImage" height="300" />
     </div>
     <div class="col-11">
-        <table style="height:100%;">
-            <tr>
-                <td class="tdTM">Tier</td>
-                <td class="tdTM">Menace</td>
-            </tr>
-            <tr>
-                <td class="tdTM">1</td>
-                <td class="tdTM">@creaturetest.MenaceT1</td>
-            </tr>
-            <tr>
-                <td class="tdTM">2</td>
-                <td class="tdTM">@creaturetest.MenaceT2</td>
-            </tr>
-            <tr>
-                <td class="tdTM">3</td>
-                <td class="tdTM">@creaturetest.MenaceT3</td>
-            </tr>
-            <tr>
-                <td class="tdTM">4</td>
-                <td class="tdTM">@creaturetest.MenaceT4</td>
-            </tr>
-        </table>
-        @*<div>@if (creaturetest.MotsCle != null) { foreach (MotCle MC in creaturetest.MotsCle) {<label>@MC.Nom</label>} }</div>*@
-        <div style="position: relative;width:fit-content;">
-            <div id="popover" class="popover">
-                <p>@motcle.Description</p>
+        <div style="display: flex; height:100%;">
+            <table style="height:100%;margin-right:10px;border-right: 1px solid white;">
+                <tr>
+                    <td class="tdTM" style="font-weight: bold;">Tier</td>
+                    <td class="tdTM" style="padding-right: 50px; font-weight: bold;">Menace</td>
+                </tr>
+                <tr>
+                    <td class="tdTM">1</td>
+                    <td class="tdTM" style="padding-right: 50px;">@creaturetest.MenaceT1</td>
+                </tr>
+                <tr>
+                    <td class="tdTM">2</td>
+                    <td class="tdTM" style="padding-right: 50px;">@creaturetest.MenaceT2</td>
+                </tr>
+                <tr>
+                    <td class="tdTM">3</td>
+                    <td class="tdTM" style="padding-right: 50px;">@creaturetest.MenaceT3</td>
+                </tr>
+                <tr>
+                    <td class="tdTM">4</td>
+                    <td class="tdTM" style="padding-right: 50px;">@creaturetest.MenaceT4</td>
+                </tr>
+            </table>
+            <div style="width:40%;">
+                <table style="width: 100%;height:5vh;margin-top:15px;text-align:center;">
+                    <tr>
+                        <td style="width: 14%; font-weight: bold;">FORCE</td>
+                        <td style="width: 14%; border-left: 1px solid white; font-weight: bold;">ENDURANCE</td>
+                        <td style="width: 14%; border-left: 1px solid white; font-weight: bold;">AGILITÉ</td>
+                        <td style="width: 14%; border-left: 1px solid white; font-weight: bold;">INITIATIVE</td>
+                        <td style="width: 14%; border-left: 1px solid white; font-weight: bold;">FORCE MENTALE</td>
+                        <td style="width: 14%; border-left: 1px solid white; font-weight: bold;">INTTELLIGENCE</td>
+                        <td style="width: 14%; border-left: 1px solid white; font-weight: bold;">SOCIABILITÉ</td>
+                    </tr>
+                    <tr>
+                        <td>@creaturetest.Force</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Endurance</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Agilite</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Initiative</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.ForceMentale</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Intelligence</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Sociabilite</td>
+                    </tr>
+                </table>
+                <div style="display:flex; margin-top:2vh; margin-left:1.5vw;">
+                    <label style="margin-right: 20px;font-weight:bold;">Mots-Clés:</label>
+                    @if (creaturetest.MotsCle != null)
+                    {
+                        int i = 1;
+                        foreach (MotCle MC in creaturetest.MotsCle)
+                        {
+                            <div style="position: relative; width: fit-content;">
+                                <div class="popover" data-popover-id="@i">
+                                    <p style="margin:0">@MC.Description</p>
+                                </div>
+                                <button class="bouton_popover" data-popover-id="@i" style="color: #b32020;">@MC.Nom</button>
+                            </div>
+                            i++;
+                        }
+                    }
+                </div>
+                <table style="width: 100%; text-align: center; margin-top: 2vh;">
+                    <tr>
+                        <td style="width: 50%; font-weight: bold;">RÉSISTANCE</td>
+                        <td style="width: 16.5%; border-left: 1px solid white; font-weight: bold; ">DÉFENSE</td>
+                        <td style="width: 16.5%; border-left: 1px solid white; font-weight: bold;">BLESSURES</td>
+                        <td style="width: 16.5%; border-left: 1px solid white; font-weight: bold;">STRESS</td>
+                    </tr>
+                    <tr>
+                        <td>@creaturetest.Resistance</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Defense</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Blessures</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Stress</td>
+                    </tr>
+                </table>
+                <table style="width: 100%; text-align: center; margin-top: 1.5vh;">
+                    <tr>
+                        <td style="width: 25%; font-weight: bold;">CONVICTION</td>
+                        <td style="width: 25%; border-left: 1px solid white; font-weight: bold;">RÉSOLUTION</td>
+                        <td style="width: 25%; border-left: 1px solid white; font-weight: bold;">VITESSSE</td>
+                        <td style="width: 25%; border-left: 1px solid white; font-weight: bold;">TAILLE</td>
+                    </tr>
+                    <tr>
+                        <td>@creaturetest.Conviction</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Resolution</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Vitesse</td>
+                        <td style="border-left: 1px solid white;">@creaturetest.Taille</td>
+                    </tr>
+                </table>
+                <div style="margin-top: 2vh; margin-left: 1.5vw;">
+                    <label style="font-weight:bold;">Bonus:</label>
+                    <label>@creaturetest.Bonus</label>
+                </div>
             </div>
-            <button id="popoverButton">@motcle.Nom</button>
+            <div style="width:50%;">
+                <div style="display:flex; margin-top:1.5vh; margin-left:1.5vw;">
+                    <label style="margin-right: 20px;font-weight:bold;">Compétences:</label>
+                    @if (creaturetest.ListeCompetences != null)
+                    {
+                        int i = 10;
+                        foreach (Competence comp in creaturetest.ListeCompetences)
+                        {
+                            <div style="position: relative; width: fit-content;">
+                                <div class="popoverv2" data-popover-id="@i">
+                                    <p style="margin:0">@comp.Description</p>
+                                </div>
+                                <button class="bouton_popover" data-popover-id="@i" style="color: #b32020;">@if (comp.Nom != "Passive")
+                                {<text> @comp.Nom @comp.Reserve </text> }
+                            else
+                            { <text> (@comp.Nom @comp.Reserve) </text>}</button>
+                            </div>
+                            i++;
+                        }
+                    }
+                </div>
+                <div style="margin-top: 1.5vh; margin-left: 1.5vw;">
+                    <label style="font-weight:bold;">Aptitudes</label><br />
+                    @foreach (Aptitude Ap in creaturetest.Aptitudes)
+                    {
+                        <label style="text-decoration: underline;">@Ap.Type</label>
+                        <pre>@Ap.Description</pre>
+                    }
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -183,11 +321,25 @@
 
 
 <style>
+    pre{
+        overflow: hidden;
+        white-space: pre-wrap;
+        font-size:medium;
+        font-family: Arial;
+    }
+
+    .bouton_popover{
+        background: none;
+        border: none;
+        color: white;
+        font-weight: bold;
+    }
+
     .popover {
-        text-align:center;
+        text-align: center;
         display: none;
         position: absolute;
-        top: 50px;
+        top: -80px;
         left: 50%;
         transform: translateX(-50%);
         background-color: #fff;
@@ -196,11 +348,34 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         z-index: 100;
         color: black;
-        max-width: 400px;
-        min-width: 200px;
+        max-width: 500px;
+        min-width: 300px;
     }
 
         .popover.show {
+            display: block;
+        }
+        
+        
+    .popoverv2 {
+        text-align: center;
+        display: none;
+        position: absolute;
+        top: -115px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        color: black;
+        max-width: 1000px;
+        min-width: 300px;
+        border-radius:10px;
+    }
+
+        .popoverv2.show {
             display: block;
         }
 

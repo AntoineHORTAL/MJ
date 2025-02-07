@@ -32,7 +32,7 @@ namespace MJ.Models.WrathAndGlory
         public int Stress { get; set; }
         public List<Competence> ListeCompetences { get; set; }
         public string Bonus { get; set; }
-        public string Aptitudes { get; set; }
+        public List<Aptitude> Aptitudes { get; set; }
         public int Conviction { get; set; }
         public int Resolution { get; set; }
         public char Taille { get; set; }
