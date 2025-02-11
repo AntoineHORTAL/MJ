@@ -146,5 +146,20 @@ namespace MJ.Controllers
 
             return PartialView("~/Views/JDR/WrathAndGlory/AffichageListeCreature.cshtml", listeCreatureSelected);
         }
+
+        public ActionResult AfficherCreationPersonnage()
+        {
+            return View("~/Views/JDR/WrathAndGlory/AideCreationPersonnageWrathAndGlory.cshtml");
+        }
+
+        public ActionResult AfficherFicheDePersonnage() 
+        {
+            return View("~/Views/JDR/WrathAndGlory/FicheDePersonnage.cshtml");
+        }
+
+        public ActionResult AfficherMCTT() 
+        {
+            return View("~/Views/JDR/WrathAndGlory/AffichageMCTT.cshtml");
+        }
     }
 }

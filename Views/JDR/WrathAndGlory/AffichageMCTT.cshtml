@@ -1,0 +1,65 @@
+﻿@using MJ.Models.WrathAndGlory;
+@{ 
+    MotCleService _motcleService = new MotCleService();
+    TalentService _talentService = new TalentService();
+    TraitArmeService _traitArmeService = new TraitArmeService();
+    List<MotCle> ListeMotCle = _motcleService.GetListMotCle();
+    List<Talent> ListeTalent = _talentService.GetListTalent();
+    List<TraitArme> ListeTraitArme = _traitArmeService.ListTraitsArmes();
+    int maxLength = new[] { ListeMotCle.Count, ListeTalent.Count, ListeTraitArme.Count }.Max();
+}
+
+<table style="border:hidden;">
+    <thead>
+        <tr>
+            <td>MOTS-CLÉS</td>
+            <td>TALENT</td>
+            <td>TRAIT D'ARME</td>
+        </tr>
+    </thead>
+    <tbody>
+        @for(int i = 0; i < maxLength; i++)
+        {
+            <tr>
+                <td>
+                    @if (ListeMotCle.Count() > i && ListeMotCle[i] != null)
+                    {
+                        <div>
+                            <label>@ListeMotCle[i].Nom</label>
+                            <pre>@ListeMotCle[i].Description</pre>
+                        </div>
+                    }
+                </td>
+                <td>
+                    @if (ListeTalent.Count() > i && ListeTalent[i] != null)
+                    {
+                        <div>
+                            <label>@ListeTalent[i].Nom</label>
+                            <label>Coût en PX: @ListeTalent[i].Cout</label>
+                            @if (ListeTalent[i].Prerequis != "") { <label>Prérequis: @ListeTalent[i].Prerequis</label> }
+                            <pre>@ListeTalent[i].Effet</pre>
+                        </div>
+                    }
+                </td>
+                <td>
+                    @if (ListeTraitArme.Count() > i && ListeTraitArme[i] != null)
+                    {
+                        <div>
+                            <label>@ListeTraitArme[i].Nom</label>
+                            <pre>@ListeTraitArme[i].Description</pre>
+                        </div>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    tbody, td, tfoot, th, thead, tr {
+        border: 1px solid white;
+    }
+    td{
+        max-width:33%;
+    }
+</style>

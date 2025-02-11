@@ -283,12 +283,19 @@
     <Compile Include="Models\PersonnageAvatar.cs" />
     <Compile Include="Models\Plannète.cs" />
     <Compile Include="Models\WrathAndGlory\Aptitude.cs" />
+    <Compile Include="Models\WrathAndGlory\Arme.cs" />
+    <Compile Include="Models\WrathAndGlory\ArmeService.cs" />
     <Compile Include="Models\WrathAndGlory\Competence.cs" />
     <Compile Include="Models\WrathAndGlory\CompetencesService.cs" />
     <Compile Include="Models\WrathAndGlory\CreatureService.cs" />
     <Compile Include="Models\WrathAndGlory\Creature_WAG.cs" />
     <Compile Include="Models\WrathAndGlory\MotCle.cs" />
     <Compile Include="Models\WrathAndGlory\MotCleService.cs" />
+    <Compile Include="Models\WrathAndGlory\Personnage.cs" />
+    <Compile Include="Models\WrathAndGlory\Talent.cs" />
+    <Compile Include="Models\WrathAndGlory\TalentService.cs" />
+    <Compile Include="Models\WrathAndGlory\TraitArme.cs" />
+    <Compile Include="Models\WrathAndGlory\TraitArmeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -534,6 +541,9 @@
     <Content Include="Views\JDR\WrathAndGlory\Bestiaire.cshtml" />
     <Content Include="Views\JDR\Star Wars Edge\AuConfinDeLEmpire\AideMJ.cshtml" />
     <Content Include="Views\JDR\WrathAndGlory\AffichageListeCreature.cshtml" />
+    <Content Include="Views\JDR\WrathAndGlory\FicheDePersonnage.cshtml" />
+    <Content Include="Views\JDR\WrathAndGlory\Equipement.cshtml" />
+    <Content Include="Views\JDR\WrathAndGlory\AffichageMCTT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\JDR\CthulhuHack\Scénarios\LaLisiere\" />

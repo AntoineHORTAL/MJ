@@ -36,6 +36,7 @@ namespace MJ.Models.WrathAndGlory
         public int Conviction { get; set; }
         public int Resolution { get; set; }
         public char Taille { get; set; }
+        public List<Talent> Talents { get; set; }
 
         public Creature_WAG(int ID, string Nom, string CheminImage, char MenaceT1, char MenaceT2, char MenaceT3, char MenaceT4, int Force, int Endurence, int Agilite, int Initiative, int ForceMentale, int Intelligence, int Sociabilite, string Race, string ListeMotCle)
         {
