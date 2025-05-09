@@ -544,6 +544,10 @@
     <Content Include="Views\JDR\WrathAndGlory\FicheDePersonnage.cshtml" />
     <Content Include="Views\JDR\WrathAndGlory\Equipement.cshtml" />
     <Content Include="Views\JDR\WrathAndGlory\AffichageMCTT.cshtml" />
+    <Content Include="Views\JDR\CthulhuHack\Scénarios\Kadath\Adaptation_des_règles.cshtml" />
+    <Content Include="Views\JDR\CthulhuHack\Scénarios\LesdisparusdeVaulnes.cshtml" />
+    <Content Include="Views\JDR\CthulhuHack\Scénarios\LeVajrador.cshtml" />
+    <Content Include="Views\JDR\CthulhuHack\Scénarios\DeProfondesRacines.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\JDR\CthulhuHack\Scénarios\LaLisiere\" />

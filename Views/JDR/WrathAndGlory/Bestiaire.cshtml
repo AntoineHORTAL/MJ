@@ -1,5 +1,6 @@
 ﻿@using MJ.Models.WrathAndGlory;
 @{
+    MotCleService _motcleservice = new MotCleService();
     List<Creature_WAG> listecreature = Model;
 
     List<string> ListeRace = new List<string>();
@@ -35,6 +36,16 @@
     creaturetest.Aptitudes.Add(new Aptitude(1, "CRI DE GUERRE", "Arrosez-les! \nUn Boy Ork Charge l'ennemi le plus proche en tirant sauvagement avec son Kalibr'. Faites un test de Capacité de Tir contre la Defense de la cible dans le cadre de la Charge; s'il touche, il n'inflige pas de dégâts, mais tous les ennemis à moins de 30m du Boy Ork doivent faire un est de Peur SD 3."));
     creaturetest.Aptitudes.Add(new Aptitude(2, "ACTION", "Kalibr': 10 + 1 DS / Portée 6 - 12 - 18 / Rafale 1 / Pistolet, Waaagh!\nKikoup': 7 + 3 DS / Portée 1 / Fiable, Waaagh!\nFrag à manche (2): 9 + 5 DS / Portée 16 / Explosion (6)"));
     creaturetest.Aptitudes.Add(new Aptitude(3, "DETERMINATION", "Dépensez 1 Ruine pour lancer 4d6"));
+
+
+
+
+
+
+
+
+    var ListeMotCLe = _motcleservice.GetListMotCle();
+    int ii = 1;
 }
 
 <script type="text/javascript">
@@ -115,19 +126,10 @@
 </script>
 
 
-@*<div style="position: relative; width: fit-content;">
-    <div class="popover" data-popover-id="1">
-        <p>@motcle.Description</p>
-    </div>
-    <button class="popover-button" data-popover-id="1">@motcle.Nom</button>
-</div>*@
 
-@*https://codepen.io/Malgus__/pen/RNbzYGa*@
-
-
-<div style="width:100%;padding:30px;" class="row">
+<div style="padding:30px;border: 1px solid white; border-radius:15px;padding:20px;margin:40px;" class="row">
     <div class="col-1">
-        <img src="@creaturetest.CheminImage" height="300" />
+        <img src="@creaturetest.CheminImage" style="max-width: 100%; height: auto; margin-top:auto;margin-bottom:auto;" />
     </div>
     <div class="col-11">
         <div style="display: flex; height:100%;">
@@ -263,6 +265,119 @@
     <div style="width:100%;">
         <button class="bouton align-mid" onclick="ShowSelectedCreatureList()">Afficher la liste des créatures sélectionnées</button>
     </div>
+    <div style="width:100%;">
+        <button class="bouton align-mid" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top:10px;">Ajouter une nouvelle créature</button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color:black;">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel" style="color:black;text-align:center;width:100%;">Ajout de nouvelle créature</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Tier</td>
+                                    <td>Menace</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="text" id="InputMenaceT1" class="inputtext" maxlength="1" size="1" style="width: 20px; text-align: center; text-transform: uppercase;"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><input type="text" id="InputMenaceT2" class="inputtext" maxlength="1" size="1" style="width: 20px; text-align: center; text-transform: uppercase;" /></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><input type="text" id="InputMenaceT3" class="inputtext" maxlength="1" size="1" style="width: 20px; text-align: center; text-transform: uppercase;" /></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><input type="text" id="InputMenaceT4" class="inputtext" maxlength="1" size="1" style="width: 20px; text-align: center; text-transform: uppercase;" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>FORCE</td>
+                                    <td>ENDURANCE</td>
+                                    <td>AGILITÉ</td>
+                                    <td>INITIATIVE</td>
+                                    <td>FORCE MENTALE</td>
+                                    <td>INTELLIGENCE</td>
+                                    <td>SOCIABILITÉ</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="number" id="inputForce" /></td>
+                                    <td><input type="number" id="inputEndurence" /></td>
+                                    <td><input type="number" id="inputAgilite" /></td>
+                                    <td><input type="number" id="inputInitiative" /></td>
+                                    <td><input type="number" id="inputForceMentale" /></td>
+                                    <td><input type="number" id="inputIntelligence" /></td>
+                                    <td><input type="number" id="inputSociabilite" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>RÉSISTANCE</td>
+                                    <td>DÉFENSE</td>
+                                    <td>BLESSURES</td>
+                                    <td>STRESS</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" id="inputResistance" class="inputtext" /></td>
+                                    <td><input type="number" id="inputDefense" /></td>
+                                    <td><input type="number" id="inputBlessures" /></td>
+                                    <td><input type="number" id="inputStress" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>CONVICTION</td>
+                                    <td>RÉSOLUTION</td>
+                                    <td>VITESSE</td>
+                                    <td>TAILLE</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="number" id="inputConviction" /></td>
+                                    <td><input type="number" id="inputResolution" /></td>
+                                    <td><input type="number" id="inputVitesse" /></td>
+                                    <td><input type="text" id="inputTaille" class="inputtext" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <select multiple>
+                            @foreach(MotCle MC in ListeMotCLe)
+                            {
+                                <option value="option_@ii">@MC.Nom</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary">Enregistrer la nouvelle créature</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     @foreach (string race in ListeRace)
     {
@@ -322,6 +437,20 @@
 
 
 <style>
+    .inputtext {
+        font-family: inherit;
+        width: 100%;
+        border: 0;
+        border-bottom: 2px solid black;
+        outline: 0;
+        color: black;
+        background: transparent;
+    }
+
+
+
+
+
     pre{
         overflow: hidden;
         white-space: pre-wrap;

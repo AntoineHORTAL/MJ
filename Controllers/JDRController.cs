@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MJ.Models.WrathAndGlory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace MJ.Controllers
 {
     public class JDRController : Controller
     {
+        CreatureService _creatureservice = new CreatureService();
+
         public ActionResult Avatar()
         {
             return View("~/Views/JDR/Avatar/Avatar.cshtml");
